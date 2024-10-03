@@ -1,0 +1,17 @@
+node_modules/
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+trace.zip
+*.har
+dist/
+build/
+*.js
+.nyc_output/
+coverage/
+*.log
