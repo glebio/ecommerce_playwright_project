@@ -1,21 +1,23 @@
-import {defineConfig, devices} from '@playwright/test';
+import {defineConfig} from '@playwright/test';
 
 export default defineConfig({
     testDir: './tests',
     fullyParallel: false,
     use: {
-        viewport: null,
+        headless: false,
         launchOptions: {
-            args: ['--start-maximized'],
+            args: ['--window-size=1920,1080'],
         },
-        // baseURL: 'https://qaresults.com',
         baseURL: 'https://shop.qaresults.com',
         trace: 'on-first-retry',
     },
     projects: [
         {
             name: 'Google Chrome',
-            use: {...devices['Desktop Chrome'], channel: 'chrome'},
+            use: {
+                channel: 'chrome',
+                viewport: null,
+            },
         },
     ],
 });
