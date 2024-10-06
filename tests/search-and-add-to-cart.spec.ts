@@ -11,6 +11,9 @@ test('Smoke: Add product to the cart', async ({page}) => {
     // Step 1: Navigate to the website
     await homePage.navigate();
 
+    // Step 1.1: Close Popup If it Appears
+    await homePage.closePopupIfAppears();
+
     // Step 2: Search for the product
     await homePage.searchProduct('laptop');
 
