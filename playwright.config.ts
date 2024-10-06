@@ -10,6 +10,7 @@ export default defineConfig({
         },
         baseURL: 'https://shop.qaresults.com',
         trace: 'on-first-retry',
+        navigationTimeout: 60000,
     },
     projects: [
         {

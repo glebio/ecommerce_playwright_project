@@ -2,6 +2,7 @@ export const selectors = {
     homePage: {
         searchBox: 'input[name="q"]',
         searchButton: 'button[type="submit"]',
+        popupCloseButton: "#popup2",
     },
     productPage: {
         productListItem: '.product-list-item',
