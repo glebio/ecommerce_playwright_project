@@ -7,6 +7,7 @@ export class ProductPage {
     }
 
     async selectFirstProduct() {
+        await clickElement(this.page, selectors.productPage.listViewButton);
         await waitForElement(this.page, selectors.productPage.productListItem);
         await this.page.locator(selectors.productPage.productListItem).first().click();
     }
