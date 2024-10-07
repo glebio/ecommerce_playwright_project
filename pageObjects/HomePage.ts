@@ -11,16 +11,17 @@ export class HomePage {
     }
 
     async closePopupIfAppears() {
-        const popupExists = await this.page.locator('#popup2 > span > span').count();
+        const popupCloseButton = selectors.popup.closeButton;
+        const popupExists = await this.page.locator(popupCloseButton).count();
 
         if (popupExists > 0) {
-            await this.page.click('#popup2 > span > span');
+            await this.page.click(popupCloseButton);
         } else {
             await this.page.waitForTimeout(500);
 
-            const popupExistsRetry = await this.page.locator('#popup2 > span > span').count();
+            const popupExistsRetry = await this.page.locator(popupCloseButton).count();
             if (popupExistsRetry > 0) {
-                await this.page.click('#popup2 > span > span');
+                await this.page.click(popupCloseButton);
             }
         }
     }

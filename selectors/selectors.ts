@@ -1,15 +1,18 @@
 export const selectors = {
     homePage: {
-        searchBox: 'input[name="q"]',
-        searchButton: 'button[type="submit"]',
-        popupCloseButton: "#popup2",
+        searchBox: '#text-search',
+        searchButton: '#sp-btn-search',
     },
     productPage: {
-        productListItem: '.product-list-item',
+        listViewButton: "#list-view",
+        productListItem: "div[class='custom-category'] div[class='row']",
         addToCartButton: 'button.add-to-cart',
         cartLink: 'a[href="/cart"]',
     },
     cartPage: {
         cartItem: '.cart-item:has-text("laptop")',
+    },
+    popup: {
+        closeButton: '#popup2 > span > span',
     },
 };
