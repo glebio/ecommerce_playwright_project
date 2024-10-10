@@ -8,8 +8,8 @@ export class ProductPage {
 
     async selectFirstProduct() {
         await clickElement(this.page, selectors.productPage.listViewButton);
-        await waitForElement(this.page, selectors.productPage.productListItem);
-        await this.page.locator(selectors.productPage.productListItem).first().click();
+        await waitForElement(this.page, selectors.productPage.productItem);
+        await this.page.locator(selectors.productPage.productItem).first().click();
     }
 
     async addToCart() {
@@ -18,5 +18,6 @@ export class ProductPage {
 
     async navigateToCart() {
         await clickElement(this.page, selectors.productPage.cartLink);
+        await clickElement(this.page, selectors.productPage.cartLink2);
     }
 }
