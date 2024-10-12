@@ -17,7 +17,7 @@ export class ProductPage {
     }
 
     async navigateToCart() {
-        await clickElement(this.page, selectors.productPage.cartLink);
-        await clickElement(this.page, selectors.productPage.cartLink2);
+        await clickElement(this.page, selectors.productPage.cartButton);
+        await clickElement(this.page, selectors.productPage.viewCartButton);
     }
 }
