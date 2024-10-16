@@ -1,23 +1,21 @@
 import {Page} from '@playwright/test';
 import {selectors} from '../selectors/selectors';
-import {clickElement, waitForElement} from '../utils/viewUtils';
 
 export class ProductPage {
     constructor(private page: Page) {
     }
 
     async selectFirstProduct() {
-        await clickElement(this.page, selectors.productPage.listViewButton);
-        await waitForElement(this.page, selectors.productPage.productItem);
+        await this.page.click(selectors.productPage.listViewButton);
         await this.page.locator(selectors.productPage.productItem).first().click();
     }
 
     async addToCart() {
-        await clickElement(this.page, selectors.productPage.addToCartButton);
+        await this.page.click(selectors.productPage.addToCartButton);
     }
 
     async navigateToCart() {
-        await clickElement(this.page, selectors.productPage.cartButton);
-        await clickElement(this.page, selectors.productPage.viewCartButton);
+        await this.page.click(selectors.productPage.cartButton);
+        await this.page.click(selectors.productPage.viewCartButton);
     }
 }
