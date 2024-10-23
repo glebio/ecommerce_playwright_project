@@ -20,4 +20,28 @@ export class HomePage {
         await this.page.fill(selectors.homePage.searchBox, keyword);
         await this.page.click(selectors.homePage.searchButton);
     }
+
+    async registerUser(userData: {
+        firstName: string,
+        lastName: string,
+        email: string,
+        phone: string,
+        password: string
+    }) {
+        // Click the Register button on the homepage
+        await this.page.click(selectors.homePage.registerButton);
+
+        // Wait for the registration popup to appear
+        const registrationPopup = selectors.registerPopup.popupContainer;
+        await this.page.waitForSelector(registrationPopup);
+
+        // Fill out the registration form
+        await this.page.fill(selectors.registerPopup.firstNameInput, userData.firstName);
+        await this.page.fill(selectors.registerPopup.lastNameInput, userData.lastName);
+        await this.page.fill(selectors.registerPopup.emailInput, userData.email);
+        await this.page.fill(selectors.registerPopup.phoneInput, userData.phone);
+        await this.page.fill(selectors.registerPopup.passwordInput, userData.password);
+        await this.page.fill(selectors.registerPopup.confirmPasswordInput, userData.password);
+        await this.page.click(selectors.registerPopup.submitButton);
+    }
 }
