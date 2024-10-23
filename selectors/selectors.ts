@@ -2,6 +2,7 @@ export const selectors = {
     homePage: {
         searchBox: '#text-search',
         searchButton: '#sp-btn-search',
+        registerButton: '#a-register-link', // Selector for the Register button on the homepage
     },
     productPage: {
         listViewButton: '#list-view',
@@ -15,6 +16,16 @@ export const selectors = {
     },
     popup: {
         closeButton: '#popup2 > span > span',
+    },
+    registerPopup: {
+        popupContainer: 'div[class="register-form-content"]',
+        firstNameInput: '#input-firstname',
+        lastNameInput: '#input-lastname',
+        emailInput: '#input-register-email',
+        phoneInput: '#input-telephone',
+        passwordInput: '#input-register-password',
+        confirmPasswordInput: '#input-confirm',
+        submitButton: 'input[onclick="ocajaxlogin.registerAction();"]',
     },
     common: {
         addToCartButton: '#button-cart',
