@@ -42,6 +42,7 @@ export class HomePage {
         await this.page.fill(selectors.registerPopup.phoneInput, userData.phone);
         await this.page.fill(selectors.registerPopup.passwordInput, userData.password);
         await this.page.fill(selectors.registerPopup.confirmPasswordInput, userData.password);
+        await this.page.check(selectors.registerPopup.privacyPolicyCheckbox);
         await this.page.click(selectors.registerPopup.submitButton);
     }
 }

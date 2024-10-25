@@ -25,6 +25,7 @@ export const selectors = {
         phoneInput: '#input-telephone',
         passwordInput: '#input-register-password',
         confirmPasswordInput: '#input-confirm',
+        privacyPolicyCheckbox: 'input[name="agree"]',
         submitButton: 'input[onclick="ocajaxlogin.registerAction();"]',
     },
     common: {
