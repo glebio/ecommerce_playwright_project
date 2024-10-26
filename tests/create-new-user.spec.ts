@@ -1,34 +1,35 @@
 import {test, expect} from '@playwright/test';
 import {HomePage} from '../pageObjects/HomePage';
-import axios from 'axios';
+import {faker} from '@faker-js/faker';
 
-interface MailinatorResponse {
-    messages: { subject: string }[];
+interface UserData {
+    firstName: string;
+    lastName: string;
+    email: string;
+    phone: string;
+    password: string;
 }
 
-test('Fake registration and check email in Mailinator', async ({page}) => {
+test('User registration and login flow', async ({page}) => {
     const homePage = new HomePage(page);
-    const testEmail = 'test-user-qa@mailinator.com';
 
-    // Step 1: Navigate to the homepage and register with a fake email
+    // Generate random user data using faker
+    const userData: UserData = {
+        firstName: faker.person.firstName(),
+        lastName: faker.person.lastName(),
+        email: faker.internet.email(),
+        phone: faker.phone.number(),
+        password: faker.internet.password()
+    };
+
+    // Step 1: Navigate to the homepage and register with the random user data
     await homePage.navigate();
-    await homePage.registerUser({
-        firstName: 'Test',
-        lastName: 'User',
-        email: testEmail,
-        phone: '1234567890',
-        password: 'Password123'
-    });
+    await homePage.registerUser(userData);
 
-    // Step 2: Simulate waiting for the email
-    await page.waitForTimeout(5000); // Wait for the email to arrive
+    // Step 2: Navigate to the login page and login with the generated credentials
+    await homePage.navigateToLogin();
+    await homePage.loginUser(userData);
 
-    // Step 3: Check Mailinator inbox via API
-    const response = await axios.get<MailinatorResponse>(`https://api.mailinator.com/v2/domains/public/inboxes/test-user-qa`);
-    const emails = response.data.messages;
-
-    // Step 4: Verify that the registration confirmation email was received
-    expect(emails.length).toBeGreaterThan(0);
-    const confirmationEmail = emails.find(email => email.subject.includes('Registration Confirmation'));
-    expect(confirmationEmail).toBeTruthy();
+    // Step 3: Verify that the user is successfully logged in
+    await expect(page.locator('text=Welcome')).toBeVisible();
 });

@@ -45,4 +45,17 @@ export class HomePage {
         await this.page.check(selectors.registerPopup.privacyPolicyCheckbox);
         await this.page.click(selectors.registerPopup.submitButton);
     }
+
+    async navigateToLogin() {
+        // Click the Login button on the homepage
+        await this.page.click(selectors.homePage.loginButton);
+        await this.page.waitForSelector(selectors.loginPopup.popupContainer);
+    }
+
+    async loginUser(userData: { email: string, password: string }) {
+        // Fill out the login form
+        await this.page.fill(selectors.loginPopup.emailInput, userData.email);
+        await this.page.fill(selectors.loginPopup.passwordInput, userData.password);
+        await this.page.click(selectors.loginPopup.submitButton);
+    }
 }
