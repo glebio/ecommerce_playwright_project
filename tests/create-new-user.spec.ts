@@ -17,7 +17,7 @@ test('User registration and login flow', async ({page}) => {
     const userData: UserData = {
         firstName: faker.person.firstName(),
         lastName: faker.person.lastName(),
-        email: faker.internet.email(),
+        email: `user${faker.string.numeric(5)}@qaresults.com`,
         phone: faker.phone.number(),
         password: faker.internet.password()
     };
