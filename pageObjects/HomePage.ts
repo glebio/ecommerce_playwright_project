@@ -44,6 +44,11 @@ export class HomePage {
         await this.page.fill(selectors.registerPopup.confirmPasswordInput, userData.password);
         await this.page.check(selectors.registerPopup.privacyPolicyCheckbox);
         await this.page.click(selectors.registerPopup.submitButton);
+
+        // Handle the success registration popup
+        const successPopupSelector = selectors.registerPopup.successPopup;
+        await this.page.waitForSelector(successPopupSelector);
+        await this.page.click(selectors.registerPopup.continueButton);
     }
 
     async navigateToLogin() {
