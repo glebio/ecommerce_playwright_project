@@ -28,6 +28,8 @@ export const selectors = {
         confirmPasswordInput: '#input-confirm',
         privacyPolicyCheckbox: 'input[name="agree"]',
         submitButton: 'input[onclick="ocajaxlogin.registerAction();"]',
+        successPopup: '//div[@class="account-success"]',
+        continueButton: '(//button[@class="button" and span[text()="Continue"]])[1]',
     },
     loginPopup: {
         popupContainer: 'div[class="login-form-content"]',
