@@ -2,42 +2,25 @@ export const selectors = {
     homePage: {
         searchBox: '#text-search',
         searchButton: '#sp-btn-search',
-        registerButton: '#a-register-link',
-        loginButton: '#a-login-link',
     },
     productPage: {
         listViewButton: '#list-view',
         productItem: 'h4[class="product-name"]',
         addToCartButton: '#button-cart',
-        cartButton: '#cart',
-        viewCartButton: 'p.cart-button a:nth-of-type(1)',
     },
     cartPage: {
-        cartItem: 'div[class="table-responsive"]',
+        cartItem: 'div[class="table-responsive"] tbody tr',
+        checkoutButton: 'a[class="btn btn-primary"]', // Селектор для кнопки "Checkout"
     },
-    popup: {
-        closeButton: '#popup2 > span > span',
-    },
-    registerPopup: {
-        popupContainer: 'div[class="register-form-content"]',
-        firstNameInput: '#input-firstname',
-        lastNameInput: '#input-lastname',
-        emailInput: '#input-register-email',
-        phoneInput: '#input-telephone',
-        passwordInput: '#input-register-password',
-        confirmPasswordInput: '#input-confirm',
-        privacyPolicyCheckbox: 'input[name="agree"]',
-        submitButton: 'input[onclick="ocajaxlogin.registerAction();"]',
-        successPopup: '//div[@class="account-success"]',
-        continueButton: '(//button[@class="button" and span[text()="Continue"]])[1]',
-    },
-    loginPopup: {
-        popupContainer: 'div[class="login-form-content"]',
-        emailInput: '#input-login-email',
-        passwordInput: '#input-login-password',
-        submitButton: '#login-submit',
-    },
-    common: {
-        addToCartButton: '#button-cart',
+    checkoutPage: {
+        guestCheckoutRadio: '#guestCheckout', // Селектор для радиокнопки "Guest Checkout"
+        continueButton: 'input[value="Continue"]', // Селектор для кнопки "Continue"
+        firstNameInput: '#input-payment-firstname',
+        lastNameInput: '#input-payment-lastname',
+        addressInput: '#input-payment-address-1',
+        cityInput: '#input-payment-city',
+        postalCodeInput: '#input-payment-postcode',
+        countrySelect: '#input-payment-country',
+        regionSelect: '#input-payment-zone',
     }
 };
