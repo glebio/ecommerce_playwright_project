@@ -22,4 +22,15 @@ export class CartPage {
         // const removeButton = cartItem.locator(selectors.cartPage.removeButton);
         // await removeButton.click();
     }
+
+    async proceedToCheckout() {
+        await this.page.click(selectors.cartPage.checkoutButton);
+        await this.page.waitForSelector(selectors.checkoutPage.guestCheckoutRadio);
+    }
+
+    async selectGuestCheckout() {
+        await this.page.click(selectors.checkoutPage.guestCheckoutRadio);
+        await this.page.click(selectors.checkoutPage.continueButton);
+        await this.page.waitForSelector(selectors.checkoutPage.firstNameInput);
+    }
 }
