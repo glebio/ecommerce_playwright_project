@@ -20,4 +20,5 @@ test('Smoke: Add product to the cart and proceed to checkout', async ({page}) =>
     // Generate random address data
     const addressData = generateAddressData();
     await checkoutPage.fillAddressForm(addressData);
+    await checkoutPage.selectPaymentMethod();
 });
