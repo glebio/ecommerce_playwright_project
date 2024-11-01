@@ -31,6 +31,8 @@ export const selectors = {
         continueBillingButton: '#button-guest',
         termAndConditionsCheckbox: 'input[name="agree"]',
         paymentMethodButton: '#button-payment-method',
+        deliveryMethodButton: '#button-shipping-method',
+        confirmOrderButton: '#button-confirm',
     },
     popup: {
         closeButton: '#popup2 > span > span',
