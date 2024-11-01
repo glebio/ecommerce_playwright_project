@@ -5,8 +5,8 @@ export class HomePage {
     constructor(private page: Page) {
     }
 
-    async navigate() {
-        await this.page.goto('/');
+    async navigateTo(url: string) {
+        await this.page.goto(url);
     }
 
     async closePopupIfAppears() {

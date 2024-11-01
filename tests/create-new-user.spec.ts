@@ -23,7 +23,7 @@ test('User registration and login flow', async ({page}) => {
     };
 
     // Step 1: Navigate to the homepage and register with the random user data
-    await homePage.navigate();
+    await homePage.navigateTo('/');
     await homePage.registerUser(userData);
 
     // Step 2: Navigate to the login page and login with the generated credentials
