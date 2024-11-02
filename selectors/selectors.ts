@@ -34,6 +34,9 @@ export const selectors = {
         deliveryMethodButton: '#button-shipping-method',
         confirmOrderButton: '#button-confirm',
     },
+    orderSuccessPage: {
+        successMessage: 'div[class="col-sm-12"] h1', // Селектор для сообщения на странице успеха
+    },
     popup: {
         closeButton: '#popup2 > span > span',
     },

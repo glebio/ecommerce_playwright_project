@@ -27,7 +27,6 @@ export class CheckoutPage {
         await this.page.click(selectors.checkoutPage.confirmOrderButton);
     }
 
-
     async fillAddressForm(addressData: {
         firstName: string,
         lastName: string,
