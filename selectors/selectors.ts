@@ -4,6 +4,7 @@ export const selectors = {
         searchButton: '#sp-btn-search',
         registerButton: '#a-register-link',
         loginButton: '#a-login-link',
+        categoryLink: 'a.category-link', // Selector for navigating to a category
     },
     productPage: {
         listViewButton: '#list-view',
@@ -11,6 +12,7 @@ export const selectors = {
         addToCartButton: '#button-cart',
         cartButton: '#cart',
         viewCartButton: 'p.cart-button a:nth-of-type(1)',
+        filterOption: 'input[type="checkbox"][value="{{filterValue}}"]',
     },
     cartPage: {
         cartItem: 'div[class="table-responsive"] tbody tr',
@@ -35,7 +37,7 @@ export const selectors = {
         confirmOrderButton: '#button-confirm',
     },
     orderSuccessPage: {
-        successMessage: 'div[class="col-sm-12"] h1', // Селектор для сообщения на странице успеха
+        successMessage: 'div[class="col-sm-12"] h1',
     },
     popup: {
         closeButton: '#popup2 > span > span',
@@ -59,8 +61,14 @@ export const selectors = {
         passwordInput: '#input-login-password',
         submitButton: '#login-submit',
     },
+    filtersPage: {
+        categoryLink: 'a[href*="{categoryName}"]',
+        categoryHeader: 'h1:has-text("{categoryName}")',
+        filterDropdown: 'div.filter-dropdown[data-filter="{filterName}"]',
+        filterOption: 'label:has-text("{filterOption}")',
+        productItem: 'h4[class="product-name"]',
+    },
     common: {
         addToCartButton: '#button-cart',
     }
 };
-
