@@ -6,7 +6,6 @@ export class FiltersPage {
     }
 
     async navigateToCategory(categoryName: string) {
-        // Click on the category link in the menu or category list
         const categoryLink = selectors.filtersPage.categoryLink.replace('{categoryName}', categoryName);
         await this.page.click(categoryLink);
         await this.page.waitForSelector(selectors.filtersPage.categoryHeader.replace('{categoryName}', categoryName));
