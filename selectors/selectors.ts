@@ -4,7 +4,9 @@ export const selectors = {
         searchButton: '#sp-btn-search',
         registerButton: '#a-register-link',
         loginButton: '#a-login-link',
-        categoryLink: 'a.category-link', // Selector for navigating to a category
+        browseCategoriesButton: 'div[class="oc-menu-bar"]',
+        categoryLink: 'a:has-text("{categoryName}")',
+        subCategoryLink: 'a:has-text("{subCategoryName}")',
     },
     productPage: {
         listViewButton: '#list-view',

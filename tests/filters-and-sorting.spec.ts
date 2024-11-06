@@ -7,7 +7,7 @@ test('Filter by category: Verify only relevant products are displayed', async ({
     const filtersPage = new FiltersPage(page);
 
     await homePage.navigateTo('/');
-    await filtersPage.navigateToCategory('Mobile & Accessories');
+    await homePage.navigateToSubCategory('Mobile & Accessories', 'Mobile Phones');
 
     // Step 3: Apply filter by specific subcategory (e.g., Smartphones)
     await filtersPage.applyCategoryFilter('Category', 'Mobile Phones');

@@ -9,6 +9,16 @@ export class HomePage {
         await this.page.goto(url);
     }
 
+    async navigateToSubCategory(categoryName: string, subCategoryName: string) {
+        await this.page.click(selectors.homePage.browseCategoriesButton);
+
+        const categoryLink = selectors.homePage.categoryLink.replace('{categoryName}', categoryName);
+        await this.page.hover(categoryLink);
+
+        const subCategoryLink = selectors.homePage.subCategoryLink.replace('{subCategoryName}', subCategoryName);
+        await this.page.click(subCategoryLink);
+    }
+
     async closePopupIfAppears() {
         const popupCloseButton = selectors.popup.closeButton;
         if (await this.page.locator(popupCloseButton).isVisible()) {
