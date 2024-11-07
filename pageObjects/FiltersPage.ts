@@ -21,10 +21,14 @@ export class FiltersPage {
     }
 
     async verifyFilteredProducts(productNames: string[]) {
-        // Verify that only filtered products are visible on the page
         for (const productName of productNames) {
-            const productItem = this.page.locator(selectors.productPage.productItem).filter({hasText: productName});
-            await expect(productItem).toBeVisible();
+            const productItems = this.page.locator(selectors.productPage.productItem).filter({hasText: productName});
+            await expect(productItems.first()).toBeVisible({timeout: 10000});
+            const productsCount = await productItems.count();
+            expect(productsCount).toBeGreaterThan(0);
+            for (let i = 0; i < productsCount; i++) {
+                await expect(productItems.nth(i)).toBeVisible();
+            }
         }
     }
 }

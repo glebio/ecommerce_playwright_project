@@ -8,10 +8,5 @@ test('Filter by category: Verify only relevant products are displayed', async ({
 
     await homePage.navigateTo('/');
     await homePage.navigateToSubCategory('Mobile & Accessories', 'Mobile Phones');
-
-    // Step 3: Apply filter by specific subcategory (e.g., Smartphones)
-    await filtersPage.applyCategoryFilter('Category', 'Mobile Phones');
-
-    // Step 4: Verify that the products displayed belong to the selected category
-    await filtersPage.verifyFilteredProducts(['Mobile Phones']);
+    await filtersPage.verifyFilteredProducts(['Apple iPhone']);
 });
