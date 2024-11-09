@@ -28,4 +28,8 @@ test('Filter within category: Apply filter and verify results are narrowed down'
     // Step 3: Apply additional filter by memory size (e.g., 128GB) and verify the results
     await filtersPage.applyCategoryFilter('Memory', '128GB');
     await filtersPage.verifyFilteredProducts(['Apple iPhone 128GB Desert Titanium']);
+
+    // Step 3: Apply additional filter by memory size (e.g., 128GB) and verify the results
+    await filtersPage.applyCategoryFilter('Brand', 'Iphone');
+    await filtersPage.verifyFilteredProducts(['Apple iPhone 128GB Desert Titanium']);
 });
