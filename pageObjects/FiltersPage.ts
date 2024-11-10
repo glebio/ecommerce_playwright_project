@@ -31,4 +31,19 @@ export class FiltersPage {
             }
         }
     }
+
+    async applySorting(sortingOption: string) {
+        const sortingDropdown = selectors.filtersPage.sortingDropdown;
+        await this.page.click(sortingDropdown);
+        const sortingOptionSelector = selectors.filtersPage.sortingOption.replace('{sortingOption}', sortingOption);
+        await this.page.click(sortingOptionSelector);
+        await this.page.waitForLoadState('networkidle');
+    }
+
+    async verifySortingOrder(attribute: string, order: 'asc' | 'desc') {
+        const productPrices = await this.page.locator(selectors.productPage.productPrice).allTextContents();
+        const prices = productPrices.map(price => parseFloat(price.replace(/[^\d.]/g, '')));
+        const sortedPrices = [...prices].sort((a, b) => (order === 'asc' ? a - b : b - a));
+        expect(prices).toEqual(sortedPrices);
+    }
 }

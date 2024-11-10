@@ -15,6 +15,7 @@ export const selectors = {
         cartButton: '#cart',
         viewCartButton: 'p.cart-button a:nth-of-type(1)',
         filterOption: 'input[type="checkbox"][value="{{filterValue}}"]',
+        productPrice: 'p[class="price"]',
     },
     cartPage: {
         cartItem: 'div[class="table-responsive"] tbody tr',
@@ -69,6 +70,8 @@ export const selectors = {
         filterDropdown: 'div.filter-dropdown[data-filter="{filterName}"]',
         filterOption: 'label:has-text("{filterOption}")',
         productItem: 'h4[class="product-name"]',
+        sortingDropdown: 'select#input-sort',
+        sortingOption: 'option[value="{sortingValue}"]',
     },
     common: {
         addToCartButton: '#button-cart',

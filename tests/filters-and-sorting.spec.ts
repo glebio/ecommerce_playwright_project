@@ -17,19 +17,34 @@ test('Filter within category: Apply filter and verify results are narrowed down'
     const homePage = new HomePage(page);
     const filtersPage = new FiltersPage(page);
 
-    // Step 1: Navigate to homepage and then to subcategory
-    await homePage.navigateTo('/');
-    await homePage.navigateToSubCategory('Mobile & Accessories', 'Mobile Phones');
+    await homePage.navigateTo('/mobile-accessories/cell-phones-service');
 
-    // Step 2: Apply filter by color (e.g., Black) and verify the results
     await filtersPage.applyCategoryFilter('Color', 'Desert Titanium');
     await filtersPage.verifyFilteredProducts(['Apple iPhone Desert Titanium']);
 
-    // Step 3: Apply additional filter by memory size (e.g., 128GB) and verify the results
     await filtersPage.applyCategoryFilter('Memory', '128GB');
     await filtersPage.verifyFilteredProducts(['Apple iPhone 128GB Desert Titanium']);
 
-    // Step 3: Apply additional filter by memory size (e.g., 128GB) and verify the results
     await filtersPage.applyCategoryFilter('Brand', 'Iphone');
     await filtersPage.verifyFilteredProducts(['Apple iPhone 128GB Desert Titanium']);
+});
+
+// New test to verify sorting within a category
+test('Sort products: Verify products are sorted correctly', async ({page}) => {
+    const homePage = new HomePage(page);
+    const filtersPage = new FiltersPage(page);
+
+    await homePage.navigateTo('/mobile-accessories/cell-phones-service');
+
+    await filtersPage.applySorting('Price: Low to High');
+    await filtersPage.verifySortingOrder('Price', 'asc');
+
+    await filtersPage.applySorting('Price: High to Low');
+    await filtersPage.verifySortingOrder('Price', 'desc');
+
+    await filtersPage.applySorting('Name: A to Z');
+    await filtersPage.verifySortingOrder('Name', 'asc');
+
+    await filtersPage.applySorting('Name: Z to A');
+    await filtersPage.verifySortingOrder('Name', 'desc');
 });
