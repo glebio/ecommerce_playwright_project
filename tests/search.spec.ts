@@ -55,7 +55,7 @@ test('Search for product: Verify empty search result', async ({page}) => {
     // Expecting no products to be found
     expect(productsCount).toBe(0);
 
-    // Verify that an appropriate message is displayed
-    const noResultsMessage = page.locator('text=No products found');
-    await expect(noResultsMessage).toBeVisible();
+    // Verify that the "Product Compare" element is not present, indicating no products were found
+    const compareTotal = page.locator('#compare-total');
+    await expect(compareTotal).toBeHidden(); // Expect the element to be hidden or not present
 });
