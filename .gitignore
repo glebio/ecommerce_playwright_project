@@ -16,3 +16,4 @@ build/
 coverage/
 *.log
 notes.md
+config.json
