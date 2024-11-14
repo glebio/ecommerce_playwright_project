@@ -14,10 +14,10 @@ test('Add a review: Verify the review submission process', async ({page}) => {
 
     // Step 2: Search for the product and navigate to the product page
     await homePage.searchProduct('iPhone');
-    await productPage.selectProduct('Apple iPhone 16 Pro');
+    await productPage.selectFirstProduct();
 
     // Step 3: Navigate to the reviews tab
-    await productPage.navigateToReviewsTab();
+    await productPage.openReviewTab();
 
     // Step 4: Fill in the review details and submit
     await reviewPage.submitReview({

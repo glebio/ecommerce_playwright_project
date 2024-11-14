@@ -18,4 +18,9 @@ export class ProductPage {
         await this.page.click(selectors.productPage.cartButton);
         await this.page.click(selectors.productPage.viewCartButton);
     }
+
+    async openReviewTab() {
+        await this.page.click(selectors.productPage.reviewTab);
+        await this.page.waitForSelector(selectors.productPage.reviewForm);
+    }
 }

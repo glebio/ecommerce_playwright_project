@@ -20,8 +20,10 @@ export const selectors = {
         reviewTab: 'a[href="#tab-review"]',
         reviewNameInput: '#input-name',
         reviewTextInput: '#input-review',
-        reviewRatingOption: 'input[name="rating"][value="{ratingValue}"]',
+        reviewRatingInput: 'input[name="rating"][value="{ratingValue}"]',
         reviewSubmitButton: '#button-review',
+        reviewForm: 'form#form-review',
+        reviewSuccessMessage: 'div.alert-success',
     },
     cartPage: {
         cartItem: 'div[class="table-responsive"] tbody tr',
