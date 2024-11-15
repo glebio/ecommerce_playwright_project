@@ -81,6 +81,15 @@ export const selectors = {
         sortingDropdown: 'select#input-sort',
         sortingOption: 'option[value="{sortingValue}"]',
     },
+    adminPage: {
+        loginUsernameInput: '#input-username',
+        loginPasswordInput: '#input-password',
+        loginButton: 'button[type="submit"]',
+        navigationMenu: 'nav#menu',
+        catalogMenu: 'a:has-text("Catalog")',
+        reviewsMenu: 'a:has-text("Reviews")',
+        reviewApproveButton: 'button[data-original-title="Approve"]',
+    },
     common: {
         addToCartButton: '#button-cart',
     }
