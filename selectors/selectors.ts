@@ -89,6 +89,10 @@ export const selectors = {
         catalogMenu: 'a:has-text("Catalog")',
         reviewsMenu: 'a:has-text("Reviews")',
         reviewApproveButton: 'button[data-original-title="Approve"]',
+        catalogDropdown: 'a#menu-catalog',
+        reviewsLink: 'a:has-text("Reviews")',
+        reviewEditButton: 'tr:has(td:has-text("{authorName}")) a[data-original-title="Edit"]',
+
     },
     common: {
         addToCartButton: '#button-cart',

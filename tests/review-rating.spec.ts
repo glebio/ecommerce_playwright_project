@@ -11,6 +11,12 @@ test('Add a review: Verify the review submission process', async ({page}) => {
     const reviewPage = new ReviewPage(page);
     const adminPage = new AdminPage(page);
 
+    const reviewData = {
+        name: 'John Doe',
+        review: 'This is an excellent product! Highly recommended.',
+        rating: 5
+    };
+
     // Step 1: Navigate to homepage
     await homePage.navigateTo('/');
 
@@ -22,11 +28,7 @@ test('Add a review: Verify the review submission process', async ({page}) => {
     await productPage.openReviewTab();
 
     // Step 4: Fill in the review details and submit
-    await reviewPage.submitReview({
-        name: 'John Doe',
-        review: 'This is an excellent product! Highly recommended.',
-        rating: 5
-    });
+    await reviewPage.submitReview(reviewData);
 
     // Step 5: Verify the success message is displayed
     const successMessage = page.locator('div.alert-success');
@@ -35,8 +37,8 @@ test('Add a review: Verify the review submission process', async ({page}) => {
 
     // Step 6: Navigate to the admin page to approve the review
     await adminPage.navigateToAdminLogin();
-    await adminPage.loginAsAdmin('admin', 'password'); // Replace with actual credentials
-    await adminPage.navigateToReviewsSection();
+    await adminPage.loginAsAdmin();
+    await adminPage.navigateToReviewsSectionAndEdit(reviewData.name);
     await adminPage.approveReview('John Doe');
 
     // Step 7: Navigate back to the product page and verify the review is visible
