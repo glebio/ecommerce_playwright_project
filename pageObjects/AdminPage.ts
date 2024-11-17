@@ -28,10 +28,8 @@ export class AdminPage {
         await this.page.click(editButtonSelector);
     }
 
-    async approveReview(productName: string) {
-        const reviewRow = this.page.locator(selectors.adminPage.reviewRow).filter({hasText: productName});
-        await reviewRow.click();
-        await this.page.check(selectors.adminPage.approveCheckbox);
-        await this.page.click(selectors.adminPage.saveButton);
+    async approveReview() {
+        await this.page.selectOption('select[name="status"]', '1');
+        await this.page.click('button[type="submit"][data-original-title="Save"]');
     }
 }

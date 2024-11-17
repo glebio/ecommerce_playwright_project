@@ -11,6 +11,7 @@ export const selectors = {
     productPage: {
         listViewButton: '#list-view',
         productItem: 'h4[class="product-name"]',
+        productPrice: 'p[class="price"]',
         addToCartButton: '#button-cart',
         cartButton: '#cart',
         viewCartButton: 'p.cart-button a:nth-of-type(1)',
@@ -24,6 +25,7 @@ export const selectors = {
         reviewSubmitButton: '#button-review',
         reviewForm: 'form#form-review',
         reviewSuccessMessage: 'div.alert-success',
+        approvedReview: '//td[@colspan="2"]/p[text()="This is an excellent product! Highly recommended."]',
     },
     cartPage: {
         cartItem: 'div[class="table-responsive"] tbody tr',
@@ -89,9 +91,9 @@ export const selectors = {
         catalogMenu: 'a:has-text("Catalog")',
         reviewsMenu: 'a:has-text("Reviews")',
         reviewApproveButton: 'button[data-original-title="Approve"]',
-        catalogDropdown: 'a#menu-catalog',
-        reviewsLink: 'a:has-text("Reviews")',
-        reviewEditButton: 'tr:has(td:has-text("{authorName}")) a[data-original-title="Edit"]',
+        catalogDropdown: '#menu-catalog',
+        reviewsLink: '//li/a[text()="Reviews"]',
+        reviewEditButton: '//tr[td[text()="{authorName}"]]//td[@class="text-right"]/a[contains(@class, "btn-primary")]',
 
     },
     common: {

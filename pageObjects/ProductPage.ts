@@ -1,4 +1,4 @@
-import {Page} from '@playwright/test';
+import {expect, Page} from '@playwright/test';
 import {selectors} from '../selectors/selectors';
 
 export class ProductPage {
@@ -22,5 +22,10 @@ export class ProductPage {
     async openReviewTab() {
         await this.page.click(selectors.productPage.reviewTab);
         await this.page.waitForSelector(selectors.productPage.reviewForm);
+    }
+
+    async approvedReviewCheck() {
+        const approvedReview = this.page.locator(selectors.productPage.approvedReview);
+        await expect(approvedReview).toBeVisible();
     }
 }
