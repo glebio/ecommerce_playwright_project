@@ -30,6 +30,10 @@ export const selectors = {
     cartPage: {
         cartItem: 'div[class="table-responsive"] tbody tr',
         checkoutButton: 'a[class="btn btn-primary"]',
+        couponCodeInput: '#input-coupon',
+        applyCouponButton: 'input[value="Apply Coupon"]',
+        discountRow: 'tr:has-text("Discount")',
+        couponCodeSection: 'div.panel-heading:has-text("Use Coupon Code")',
     },
     checkoutPage: {
         guestCheckoutRadio: 'input[value="guest"]',
