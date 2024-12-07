@@ -1,5 +1,5 @@
 import {expect, test} from '@playwright/test';
-import {HomePage} from '../pageObjects/HomePage';
+import {HomePage} from '../../pageObjects/HomePage';
 
 // New test to verify searching for a product
 test('Search for product: Verify only relevant products are displayed', async ({page}) => {
@@ -9,7 +9,7 @@ test('Search for product: Verify only relevant products are displayed', async ({
     await homePage.searchProduct('iPhone');
 
     // Verify that the search results contain only "iPhone" products
-    const products = page.locator('h4[class="product-name"]');
+    const products = page.locator('.product-item h4');
     const productsCount = await products.count();
 
     for (let i = 0; i < productsCount; i++) {
@@ -29,7 +29,7 @@ test('Search for product: Verify partial match results are displayed', async ({p
     await homePage.searchProduct('Phone');
 
     // Verify that the search results contain products with "Phone" in their name
-    const products = page.locator('h4[class="product-name"]');
+    const products = page.locator('.product-item h4');
     const productsCount = await products.count();
 
     for (let i = 0; i < productsCount; i++) {
@@ -49,7 +49,7 @@ test('Search for product: Verify empty search result', async ({page}) => {
     await homePage.searchProduct('NonExistingProduct');
 
     // Verify that no products are displayed
-    const products = page.locator('h4[class="product-name"]');
+    const products = page.locator('.product-item h4');
     const productsCount = await products.count();
 
     // Expecting no products to be found
