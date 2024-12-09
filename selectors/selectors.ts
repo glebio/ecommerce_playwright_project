@@ -10,11 +10,11 @@ export const selectors = {
     },
     productPage: {
         listViewButton: '#list-view',
-        productItem: 'h4[class="product-name"]',
+        productItem: '.product-item h4',
         productPrice: 'p[class="price"]',
         addToCartButton: '#button-cart',
         cartButton: '#cart',
-        viewCartButton: 'p.cart-button a:nth-of-type(1)',
+        viewCartButton: '//p[@class="text-right"]/a[1]',
         filterOption: 'input[type="checkbox"][value="{{filterValue}}"]',
         sortingDropdown: 'select#input-sort',
         sortingOption: 'option[value="{sortingValue}"]',
@@ -54,7 +54,7 @@ export const selectors = {
         confirmOrderButton: '#button-confirm',
     },
     orderSuccessPage: {
-        successMessage: 'div[class="col-sm-12"] h1',
+        successMessage: '//div[@id="content"]/p[1]',
     },
     popup: {
         closeButton: '#popup2 > span > span',

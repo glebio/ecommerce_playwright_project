@@ -14,8 +14,10 @@ test('Smoke: Add product to the cart and proceed to checkout', async ({page}) =>
     const orderSuccessPage = new OrderSuccessPage(page);
 
     await searchAndAddProductToCart(homePage, productPage, 'iphone');
+
     const cartItem = page.locator(selectors.cartPage.cartItem);
     await expect(cartItem).toBeVisible();
+
     await checkoutPage.proceedToCheckout();
     await checkoutPage.selectGuestCheckout();
     const addressData = generateAddressData();
@@ -23,5 +25,6 @@ test('Smoke: Add product to the cart and proceed to checkout', async ({page}) =>
     await checkoutPage.selectDeliveryMethod();
     await checkoutPage.selectPaymentMethod();
     await checkoutPage.confirmMethod();
+
     await orderSuccessPage.verifyOrderSuccessMessage();
 });
