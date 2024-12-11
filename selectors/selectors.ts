@@ -2,7 +2,8 @@ export const selectors = {
     homePage: {
         searchBox: '#text-search',
         searchButton: '#sp-btn-search',
-        registerButton: '#a-register-link',
+        accountButton: 'a.dropdown-toggle[title="My Account"]',
+        registerButton: '#pt-register-link',
         loginButton: '#a-login-link',
         browseCategoriesButton: 'div[class="oc-menu-bar"]',
         categoryLink: 'a:has-text("{categoryName}")',
@@ -60,7 +61,7 @@ export const selectors = {
         closeButton: '#popup2 > span > span',
     },
     registerPopup: {
-        popupContainer: 'div[class="register-form-content"]',
+        popupContainer: 'div[class="account-register"]',
         firstNameInput: '#input-firstname',
         lastNameInput: '#input-lastname',
         emailInput: '#input-register-email',
@@ -68,7 +69,7 @@ export const selectors = {
         passwordInput: '#input-register-password',
         confirmPasswordInput: '#input-confirm',
         privacyPolicyCheckbox: 'input[name="agree"]',
-        submitButton: 'input[onclick="ocajaxlogin.registerAction();"]',
+        submitButton: 'input.btn.btn-primary[value="Continue"]',
         successPopup: '//div[@class="account-success"]',
         continueButton: '(//button[@class="button" and span[text()="Continue"]])[1]',
     },
