@@ -39,6 +39,7 @@ export class HomePage {
         password: string
     }) {
         // Click the Register button on the homepage
+        await this.page.click(selectors.homePage.accountButton);
         await this.page.click(selectors.homePage.registerButton);
 
         // Wait for the registration popup to appear
