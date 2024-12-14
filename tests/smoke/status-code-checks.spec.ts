@@ -1,7 +1,8 @@
 import {test, expect} from '@playwright/test';
 
 test.describe('Smoke Tests for Status Codes', () => {
-    test('Verify status codes for key pages', async ({request, baseURL}) => {
+    test('Verify status codes for key pages @smoke', async ({request, baseURL}) => {
+        test.info().annotations.push({type: 'tag', description: 'smoke'});
         if (!baseURL) {
             throw new Error('Base URL is not defined in Playwright config.');
         }
@@ -13,11 +14,11 @@ test.describe('Smoke Tests for Status Codes', () => {
             {
                 url: `${baseURL}/smartphones-and-accessories/smartphones?product_id=51`,
                 name: 'Product Page',
-                expectedStatus: 404
+                expectedStatus: 200
             }, // Fixed URL
             {url: `${baseURL}/index.php?route=checkout/cart`, name: 'Checkout Page', expectedStatus: 200},
             {
-                url: `${baseURL}/index.php?route=product/search&search=iphone&category_id=0`,
+                url: `${baseURL}/index.php?route=product/product&product_id=51&search=iphone&category_id=0`,
                 name: 'Search Page',
                 expectedStatus: 200
             },

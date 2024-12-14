@@ -10,8 +10,12 @@ export default defineConfig({
         },
         baseURL: 'https://shop.qaresults.com',
         trace: 'on-first-retry',
-        navigationTimeout: 60000,
+        navigationTimeout: 30000,
     },
+    reporter: [
+        ['list'], // Default list reporter
+        ['json', {outputFile: 'test-results.json'}], // JSON reporter for custom tooling
+    ],
     projects: [
         {
             name: 'Google Chrome',
@@ -21,4 +25,7 @@ export default defineConfig({
             },
         },
     ],
+    metadata: {
+        tags: ['smoke'], // Add metadata for smoke tests
+    },
 });
