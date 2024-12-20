@@ -4,7 +4,7 @@ export const selectors = {
         searchButton: '#sp-btn-search',
         accountButton: 'a.dropdown-toggle[title="My Account"]',
         registerButton: '#pt-register-link',
-        loginButton: '#a-login-link',
+        loginButton: '#pt-login-link',
         browseCategoriesButton: 'div[class="oc-menu-bar"]',
         categoryLink: 'a:has-text("{categoryName}")',
         subCategoryLink: 'a:has-text("{subCategoryName}")',
