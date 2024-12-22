@@ -5,6 +5,7 @@ export const selectors = {
         accountButton: 'a.dropdown-toggle[title="My Account"]',
         registerButton: '#pt-register-link',
         loginButton: '#pt-login-link',
+        logoutButton: '#pt-logout-link',
         browseCategoriesButton: 'div[class="oc-menu-bar"]',
         categoryLink: 'a:has-text("{categoryName}")',
         subCategoryLink: 'a:has-text("{subCategoryName}")',
