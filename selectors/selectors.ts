@@ -76,9 +76,9 @@ export const selectors = {
     },
     loginPopup: {
         popupContainer: 'div[class="login-form-content"]',
-        emailInput: '#input-login-email',
-        passwordInput: '#input-login-password',
-        submitButton: '#login-submit',
+        emailInput: '#input-email',
+        passwordInput: '#input-password',
+        submitButton: 'button.button.btn:has-text("Login")',
     },
     filtersPage: {
         categoryLink: 'a[href*="{categoryName}"]',

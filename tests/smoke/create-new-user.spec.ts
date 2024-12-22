@@ -28,6 +28,8 @@ test.describe('Tests for User registration and login flow.', () => {
         await homePage.registerUser(userData);
 
         // Step 2: Navigate to the login page and login with the generated credentials
+        await homePage.navigateToLogout();
+        await homePage.navigateTo('/');
         await homePage.navigateToLogin();
         await homePage.loginUser(userData);
 
