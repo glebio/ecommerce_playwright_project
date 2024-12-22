@@ -62,8 +62,14 @@ export class HomePage {
         await this.page.click(selectors.registerPopup.continueButton);
     }
 
+    async navigateToLogout() {
+        // Click the Logout button on the homepage
+        await this.page.click(selectors.homePage.accountButton);
+        await this.page.click(selectors.homePage.logoutButton);
+    }
     async navigateToLogin() {
         // Click the Login button on the homepage
+        await this.page.click(selectors.homePage.accountButton);
         await this.page.click(selectors.homePage.loginButton);
         await this.page.waitForSelector(selectors.loginPopup.popupContainer);
     }
