@@ -10,7 +10,7 @@ export class HomePage {
     }
 
     async navigateToSubCategory(categoryName: string, subCategoryName: string) {
-        await this.page.click(selectors.homePage.browseCategoriesButton);
+        // await this.page.click(selectors.homePage.browseCategoriesButton);
 
         const categoryLink = selectors.homePage.categoryLink.replace('{categoryName}', categoryName);
         await this.page.hover(categoryLink);

@@ -1,6 +1,6 @@
 import {test} from '@playwright/test';
-import {HomePage} from '../pageObjects/HomePage';
-import {FiltersPage} from '../pageObjects/FiltersPage';
+import {HomePage} from '../../pageObjects/HomePage';
+import {FiltersPage} from '../../pageObjects/FiltersPage';
 
 // Test to verify filtering by category
 test('Filter by category: Verify only relevant products are displayed', async ({page}) => {
@@ -8,7 +8,7 @@ test('Filter by category: Verify only relevant products are displayed', async ({
     const filtersPage = new FiltersPage(page);
 
     await homePage.navigateTo('/');
-    await homePage.navigateToSubCategory('Mobile & Accessories', 'Mobile Phones');
+    await homePage.navigateToSubCategory('Smartphones & Accessories', 'Apple Iphone');
     await filtersPage.verifyFilteredProducts(['Apple iPhone']);
 });
 
