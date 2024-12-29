@@ -12,7 +12,7 @@ test.describe('Smoke Tests for Status Codes', () => {
             {url: `${baseURL}/`, name: 'Homepage', expectedStatus: 200},
             {url: `${baseURL}/smartphones-and-accessories/smartphones`, name: 'Category Page', expectedStatus: 200},
             {
-                url: `${baseURL}/smartphones-and-accessories/smartphones?product_id=51`,
+                url: `${baseURL}/smartphones-and-accessories/smartphones/apple-iphone-16-pro-512gb-black-titanium`,
                 name: 'Product Page',
                 expectedStatus: 200
             }, // Fixed URL
