@@ -1,5 +1,5 @@
 import {expect, test} from '@playwright/test';
-import {HomePage} from '../../pageObjects/HomePage';
+import {HomePage} from '../../../pageObjects/HomePage';
 
 // New test to verify searching for a product
 test('Search for product: Verify only relevant products are displayed', async ({page}) => {
