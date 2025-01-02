@@ -1,8 +1,8 @@
 import {expect, test} from '@playwright/test';
-import {HomePage} from '../pageObjects/HomePage';
-import {ProductPage} from '../pageObjects/ProductPage';
-import {ReviewPage} from '../pageObjects/ReviewPage';
-import {AdminPage} from '../pageObjects/AdminPage';
+import {HomePage} from '../../../pageObjects/HomePage';
+import {ProductPage} from '../../../pageObjects/ProductPage';
+import {ReviewPage} from '../../../pageObjects/ReviewPage';
+import {AdminPage} from '../../../pageObjects/AdminPage';
 
 // Test to verify adding a review for a product
 test('Add a review: Verify the review submission process', async ({page}) => {

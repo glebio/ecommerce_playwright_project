@@ -35,7 +35,7 @@ export const selectors = {
         couponCodeInput: '#input-coupon',
         applyCouponButton: 'input[value="Apply Coupon"]',
         discountRow: 'tr:has-text("Discount")',
-        couponCodeSection: 'div.panel-heading:has-text("Use Coupon Code")',
+        couponCodeSection: '//div[contains(@class, "panel-heading")]//a[contains(text(), "Use Coupon Code")]',
     },
     checkoutPage: {
         guestCheckoutRadio: 'input[value="guest"]',
