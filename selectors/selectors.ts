@@ -34,7 +34,7 @@ export const selectors = {
         checkoutButton: 'a[class="btn btn-primary"]',
         couponCodeInput: '#input-coupon',
         applyCouponButton: 'input[value="Apply Coupon"]',
-        discountRow: 'tr:has-text("Discount")',
+        discountRow: '//td[@class=\'text-right\' and strong[contains(text(), \'Coupon (NY20)\')]]/following-sibling::td[contains(text(), \'$-199.80\')]',
         couponCodeSection: '//div[contains(@class, "panel-heading")]//a[contains(text(), "Use Coupon Code")]',
     },
     checkoutPage: {
