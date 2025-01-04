@@ -25,5 +25,5 @@ test('Smoke: Add sales coupon', async ({page}) => {
     // Step 4: Verify discount is applied
     const discountRow = page.locator(selectors.cartPage.discountRow);
     await expect(discountRow).toBeVisible();
-    await expect(discountRow).toContainText('NY20');
+    await expect(discountRow).toContainText('$-199.80');
 });
