@@ -17,7 +17,7 @@ test('Filter within category: Apply filter and verify results are narrowed down'
     const homePage = new HomePage(page);
     const filtersPage = new FiltersPage(page);
 
-    await homePage.navigateTo('/mobile-accessories/cell-phones-service');
+    await homePage.navigateTo('/smartphones/apple-iphone');
 
     await filtersPage.applyCategoryFilter('Color', 'Desert Titanium');
     await filtersPage.verifyFilteredProducts(['Apple iPhone Desert Titanium']);
