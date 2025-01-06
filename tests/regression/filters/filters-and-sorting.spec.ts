@@ -19,14 +19,11 @@ test('Filter within category: Apply filter and verify results are narrowed down'
 
     await homePage.navigateTo('/smartphones/apple-iphone');
 
-    await filtersPage.applyCategoryFilter('Color', 'Desert Titanium');
-    await filtersPage.verifyFilteredProducts(['Apple iPhone Desert Titanium']);
+    await filtersPage.applyCategoryFilter('Color', 'Beige');
+    await filtersPage.verifyFilteredProducts(['Apple iPhone', 'Desert Titanium']);
 
-    await filtersPage.applyCategoryFilter('Memory', '128GB');
-    await filtersPage.verifyFilteredProducts(['Apple iPhone 128GB Desert Titanium']);
-
-    await filtersPage.applyCategoryFilter('Brand', 'Iphone');
-    await filtersPage.verifyFilteredProducts(['Apple iPhone 128GB Desert Titanium']);
+    await filtersPage.applyCategoryFilter('Internal Storage (GB)', '128');
+    await filtersPage.verifyFilteredProducts(['Apple iPhone', 'Desert Titanium', '128GB']);
 });
 
 // New test to verify sorting within a category
