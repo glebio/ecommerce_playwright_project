@@ -84,10 +84,17 @@ export const selectors = {
         categoryLink: 'a[href*="{categoryName}"]',
         categoryHeader: 'h1:has-text("{categoryName}")',
         filterDropdown: 'div.filter-dropdown[data-filter="{filterName}"]',
-        filterOption: 'label:has-text("{filterOption}")',
+        // filterOption: 'label:has-text("{filterOption}")',
         productItem: 'h4[class="product-name"]',
         sortingDropdown: 'select#input-sort',
         sortingOption: 'option[value="{sortingValue}"]',
+        // Selector for specific filter option checkbox (e.g., Color > Beige)
+        filterOption: 'div[data-filter="{filterName}"] input[value="{filterOption}"]',
+        getFilterBlock: (filterName: string) =>
+            `div.list-group-item.ocfilter-option:has-text("${filterName}")`,
+        getFilterOption: (filterName: string, filterOption: string) =>
+            `div.list-group-item.ocfilter-option:has-text("${filterName}") .ocf-option-values label:has-text("${filterOption}")`,
+        showProductsPopup: `div.popover-content > button.btn.btn-primary:not(.disabled):has-text("Show")`,
     },
     adminPage: {
         loginUsernameInput: '#input-username',

@@ -11,14 +11,27 @@ export class FiltersPage {
         await this.page.waitForSelector(selectors.filtersPage.categoryHeader.replace('{categoryName}', categoryName));
     }
 
+    // async applyCategoryFilter(filterName: string, filterOption: string) {
+    //     // Open the filter dropdown and select the appropriate filter option
+    //     const filterDropdown = selectors.filtersPage.filterDropdown.replace('{filterName}', filterName);
+    //     await this.page.click(filterDropdown);
+    //     const filterOptionSelector = selectors.filtersPage.filterOption.replace('{filterOption}', filterOption);
+    //     await this.page.click(filterOptionSelector);
+    //     await this.page.waitForLoadState('networkidle');
+    // }
+
     async applyCategoryFilter(filterName: string, filterOption: string) {
-        // Open the filter dropdown and select the appropriate filter option
-        const filterDropdown = selectors.filtersPage.filterDropdown.replace('{filterName}', filterName);
-        await this.page.click(filterDropdown);
-        const filterOptionSelector = selectors.filtersPage.filterOption.replace('{filterOption}', filterOption);
+        const filterOptionSelector = selectors.filtersPage.getFilterOption(filterName, filterOption);
         await this.page.click(filterOptionSelector);
+        const showProductsPopup = selectors.filtersPage.showProductsPopup;
+        await this.page.waitForSelector(showProductsPopup, {
+            state: 'visible',
+            timeout: 8000,
+        });
+        await this.page.click(showProductsPopup);
         await this.page.waitForLoadState('networkidle');
     }
+
 
     async verifyFilteredProducts(productNames: string[]) {
         for (const productName of productNames) {
