@@ -25,6 +25,8 @@ export const selectors = {
         reviewTextInput: '#input-review',
         reviewRatingInput: 'input[name="rating"][value="{ratingValue}"]',
         reviewSubmitButton: '#button-review',
+        productList: '.product-list',
+        productName: '.product-layout .caption h4 a',
         reviewForm: 'form#form-review',
         reviewSuccessMessage: 'div.alert-success',
         approvedReview: '//td[@colspan="2"]/p[text()="This is an excellent product! Highly recommended."]',
@@ -87,7 +89,7 @@ export const selectors = {
         // filterOption: 'label:has-text("{filterOption}")',
         productItem: 'h4[class="product-name"]',
         sortingDropdown: 'select#input-sort',
-        sortingOption: 'option[value="{sortingValue}"]',
+        sortingOption: 'select#input-sort option[value*="sort={sortBy}&order={order}"]',
         // Selector for specific filter option checkbox (e.g., Color > Beige)
         filterOption: 'div[data-filter="{filterName}"] input[value="{filterOption}"]',
         getFilterBlock: (filterName: string) =>

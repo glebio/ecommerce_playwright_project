@@ -45,18 +45,32 @@ export class FiltersPage {
         }
     }
 
-    async applySorting(sortingOption: string) {
+    async applySorting(sortBy: string, order: string) {
         const sortingDropdown = selectors.filtersPage.sortingDropdown;
-        await this.page.click(sortingDropdown);
-        const sortingOptionSelector = selectors.filtersPage.sortingOption.replace('{sortingOption}', sortingOption);
-        await this.page.click(sortingOptionSelector);
+        const sortingValue = `https://shop.qaresults.com/smartphones/apple-iphone?sort=${sortBy}&order=${order.toUpperCase()}`;
+        await this.page.waitForSelector(sortingDropdown, {timeout: 8000});
+        await this.page.selectOption(sortingDropdown, {value: sortingValue});
         await this.page.waitForLoadState('networkidle');
+        await this.page.waitForSelector(selectors.productPage.productList, {timeout: 8000});
+
     }
 
-    async verifySortingOrder(attribute: string, order: 'asc' | 'desc') {
-        const productPrices = await this.page.locator(selectors.productPage.productPrice).allTextContents();
-        const prices = productPrices.map(price => parseFloat(price.replace(/[^\d.]/g, '')));
-        const sortedPrices = [...prices].sort((a, b) => (order === 'asc' ? a - b : b - a));
-        expect(prices).toEqual(sortedPrices);
+    async verifySortingOrder(attribute: 'Price' | 'Name', order: 'asc' | 'desc') {
+        let values: (string | number)[];
+        if (attribute === 'Price') {
+            const productPrices = await this.page.locator(selectors.productPage.productPrice).allTextContents();
+            values = productPrices.map(price => parseFloat(price.replace(/[^\d.]/g, ''))).filter(price => !isNaN(price));
+        } else if (attribute === 'Name') {
+            values = await this.page.locator(selectors.productPage.productName).allTextContents();
+        } else {
+            throw new Error(`Unsupported attribute: ${attribute}`);
+        }
+        const sortedValues = [...values].sort((a, b) => {
+            if (typeof a === 'string' && typeof b === 'string') {
+                return order === 'asc' ? a.localeCompare(b) : b.localeCompare(a);
+            }
+            return order === 'asc' ? (a as number) - (b as number) : (b as number) - (a as number);
+        });
+        expect(values).toEqual(sortedValues);
     }
 }
