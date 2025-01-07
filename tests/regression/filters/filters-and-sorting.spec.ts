@@ -31,17 +31,17 @@ test('Sort products: Verify products are sorted correctly', async ({page}) => {
     const homePage = new HomePage(page);
     const filtersPage = new FiltersPage(page);
 
-    await homePage.navigateTo('/mobile-accessories/cell-phones-service');
+    await homePage.navigateTo('/smartphones/apple-iphone');
 
-    await filtersPage.applySorting('Price: Low to High');
+    await filtersPage.applySorting('p.price', 'asc');
     await filtersPage.verifySortingOrder('Price', 'asc');
 
-    await filtersPage.applySorting('Price: High to Low');
+    await filtersPage.applySorting('p.price', 'desc');
     await filtersPage.verifySortingOrder('Price', 'desc');
 
-    await filtersPage.applySorting('Name: A to Z');
+    await filtersPage.applySorting('pd.name', 'asc');
     await filtersPage.verifySortingOrder('Name', 'asc');
 
-    await filtersPage.applySorting('Name: Z to A');
+    await filtersPage.applySorting('pd.name', 'desc');
     await filtersPage.verifySortingOrder('Name', 'desc');
 });
