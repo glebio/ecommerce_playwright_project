@@ -1,5 +1,6 @@
 import {expect, Page} from '@playwright/test';
 import {selectors} from '../selectors/selectors';
+import config from '../playwright.config';
 
 export class FiltersPage {
     constructor(private page: Page) {
@@ -10,15 +11,6 @@ export class FiltersPage {
         await this.page.click(categoryLink);
         await this.page.waitForSelector(selectors.filtersPage.categoryHeader.replace('{categoryName}', categoryName));
     }
-
-    // async applyCategoryFilter(filterName: string, filterOption: string) {
-    //     // Open the filter dropdown and select the appropriate filter option
-    //     const filterDropdown = selectors.filtersPage.filterDropdown.replace('{filterName}', filterName);
-    //     await this.page.click(filterDropdown);
-    //     const filterOptionSelector = selectors.filtersPage.filterOption.replace('{filterOption}', filterOption);
-    //     await this.page.click(filterOptionSelector);
-    //     await this.page.waitForLoadState('networkidle');
-    // }
 
     async applyCategoryFilter(filterName: string, filterOption: string) {
         const filterOptionSelector = selectors.filtersPage.getFilterOption(filterName, filterOption);
@@ -47,12 +39,12 @@ export class FiltersPage {
 
     async applySorting(sortBy: string, order: string) {
         const sortingDropdown = selectors.filtersPage.sortingDropdown;
-        const sortingValue = `https://shop.qaresults.com/smartphones/apple-iphone?sort=${sortBy}&order=${order.toUpperCase()}`;
+        const baseURL = config.use?.baseURL || '';
+        const sortingValue = `${baseURL}/smartphones/apple-iphone?sort=${sortBy}&order=${order.toUpperCase()}`;
         await this.page.waitForSelector(sortingDropdown, {timeout: 8000});
         await this.page.selectOption(sortingDropdown, {value: sortingValue});
         await this.page.waitForLoadState('networkidle');
         await this.page.waitForSelector(selectors.productPage.productList, {timeout: 8000});
-
     }
 
     async verifySortingOrder(attribute: 'Price' | 'Name', order: 'asc' | 'desc') {
