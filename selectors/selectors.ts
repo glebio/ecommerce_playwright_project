@@ -29,7 +29,7 @@ export const selectors = {
         productName: '.product-layout .caption h4 a',
         reviewForm: 'form#form-review',
         reviewSuccessMessage: 'div.alert-success',
-        approvedReview: '//td[@colspan="2"]/p[text()="This is an excellent product! Highly recommended."]',
+        approvedReview: '//td[@colspan="2"]/p[contains(text(),"This is an excellent product! Highly recommended.")]',
     },
     cartPage: {
         cartItem: 'div[class="table-responsive"] tbody tr',
