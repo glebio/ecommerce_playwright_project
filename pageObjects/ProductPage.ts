@@ -25,7 +25,8 @@ export class ProductPage {
     }
 
     async approvedReviewCheck() {
-        const approvedReview = this.page.locator(selectors.productPage.approvedReview);
+        const approvedReview = this.page.locator(selectors.productPage.approvedReview).first();
+        await this.page.waitForSelector(selectors.productPage.approvedReview, {state: 'visible', timeout: 5000});
         await expect(approvedReview).toBeVisible();
     }
 }
