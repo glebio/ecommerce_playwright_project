@@ -30,13 +30,22 @@ test('Verify that all main resources load without errors', async ({page}) => {
     // Navigate to the page
     await page.goto('https://shop.qaresults.com');
 
-    // Evaluate broken images
-    const images = await page.evaluate(() => {
+    // Evaluate broken images with detailed information
+    const brokenImageDetails = await page.evaluate(() => {
         return Array.from(document.images)
             .filter(img => !img.complete || img.naturalWidth === 0)
-            .map(img => img.src);
+            .map(img => ({
+                src: img.src || '[No src attribute]',
+                alt: img.alt || '[No alt attribute]',
+                outerHTML: img.outerHTML,
+            }));
     });
-    images.forEach(img => brokenImages.push(`❌ Broken Image: ${img}`));
+
+    brokenImageDetails.forEach(img => {
+        brokenImages.push(
+            `❌ Broken Image:\n  src: ${img.src}\n  alt: ${img.alt}\n  HTML: ${img.outerHTML}`
+        );
+    });
 
     // Log detailed summary
     console.log('========== Detailed Summary ==========');
