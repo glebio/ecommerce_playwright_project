@@ -23,12 +23,19 @@ test.describe('Logo Display Verification', () => {
 
             // Get the logo's parent link
             const logoLink = page.locator('header div#logo > a'); // Adjusted selector for the clickable link
-            await expect(logoLink).toHaveAttribute('href', `${baseURL}/`); // Ensure it redirects to the home page
+            const logoHref = await logoLink.getAttribute('href');
+
+            // Normalize both the expected and actual URLs to remove trailing slashes
+            const normalizedExpectedURL = baseURL.replace(/\/$/, '');
+            const normalizedLogoHref = logoHref?.replace(/\/$/, '');
+
+            // Verify the normalized URLs match
+            expect(normalizedLogoHref).toBe(normalizedExpectedURL);
 
             // Click the logo and verify redirection to the home page
             await logoLink.click();
             await page.waitForURL(baseURL, {timeout: 8000});
-            expect(page.url()).toBe(baseURL); // Final assertion for URL
+            expect(page.url().replace(/\/$/, '')).toBe(normalizedExpectedURL); // Final assertion for URL
         });
     }
 });
