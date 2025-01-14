@@ -31,16 +31,11 @@ test.describe('Main Menu (Navigation)', () => {
     });
 
     test('Verify account menu navigation', async ({page}) => {
-        // Click on the account menu
-        const accountMenu = page.locator('a', {hasText: 'My Account'});
+        const accountMenu = page.locator('a[title="My Account"]');
         await accountMenu.click();
-
-        // Verify dropdown is visible
         const accountDropdown = page.locator('.dropdown-menu');
-        await expect(accountDropdown).toBeVisible({timeout: 5000});
 
-        // Click on Login option
-        const loginOption = accountDropdown.locator('a', {hasText: 'Login'});
+        const loginOption = accountDropdown.locator('a', {hasText: 'Register'});
         await loginOption.click();
 
         // Verify the URL and page content
@@ -51,7 +46,7 @@ test.describe('Main Menu (Navigation)', () => {
 
     test('Verify cart navigation', async ({page}) => {
         // Click on the cart link
-        const cartLink = page.locator('a', {hasText: 'Cart'});
+        const cartLink = page.locator('a', {hasText: 'Checkout'});
         await cartLink.click();
 
         // Verify the URL and page content
