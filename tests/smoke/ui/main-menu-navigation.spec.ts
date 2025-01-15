@@ -35,14 +35,15 @@ test.describe('Main Menu (Navigation)', () => {
         await accountMenu.click();
         const accountDropdown = page.locator('.dropdown-menu');
 
-        const loginOption = accountDropdown.locator('a', {hasText: 'Register'});
-        await loginOption.click();
+        const registerOption = accountDropdown.locator('a:has-text("Register")');
+        await registerOption.click();
 
-        // Verify the URL and page content
-        await expect(page).toHaveURL(/.*route=account\/login/, {timeout: 5000});
-        const loginHeader = page.locator('h1');
-        await expect(loginHeader).toHaveText('Account Login', {timeout: 5000});
+        await expect(page).toHaveURL('https://shop.qaresults.com/register', {timeout: 5000});
+
+        const registerHeader = page.locator('h1');
+        await expect(registerHeader).toHaveText('Register Account', {timeout: 5000});
     });
+
 
     test('Verify cart navigation', async ({page}) => {
         // Click on the cart link
