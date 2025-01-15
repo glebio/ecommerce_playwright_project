@@ -30,18 +30,34 @@ test.describe('Main Menu (Navigation)', () => {
         await expect(categoryHeader).toHaveText('Smartphones & Accessories', {timeout: 5000});
     });
 
-    test('Verify account menu navigation', async ({page}) => {
+    test('Verify register account menu navigation', async ({page}) => {
         const accountMenu = page.locator('a[title="My Account"]');
         await accountMenu.click();
         const accountDropdown = page.locator('.dropdown-menu');
 
-        const loginOption = accountDropdown.locator('a', {hasText: 'Register'});
+        const registerOption = accountDropdown.locator('a:has-text("Register")');
+        await registerOption.click();
+
+        await expect(page).toHaveURL('https://shop.qaresults.com/register', {timeout: 5000});
+
+        const registerHeader = page.locator('h1');
+        await expect(registerHeader).toHaveText('Register Account', {timeout: 5000});
+    });
+
+    test('Verify login account menu navigation', async ({page}) => {
+        const accountMenu = page.locator('a[title="My Account"]');
+        await accountMenu.click();
+
+        const accountDropdown = page.locator('.dropdown-menu');
+        const loginOption = accountDropdown.locator('a:has-text("Or Sign In")');
         await loginOption.click();
 
-        // Verify the URL and page content
-        await expect(page).toHaveURL(/.*route=account\/login/, {timeout: 5000});
-        const loginHeader = page.locator('h1');
-        await expect(loginHeader).toHaveText('Account Login', {timeout: 5000});
+        // Verify the URL for the login page
+        await expect(page).toHaveURL('https://shop.qaresults.com/login', {timeout: 5000});
+
+        // Locate the specific "Returning Customer" header
+        const returningCustomerHeader = page.locator('h2', {hasText: 'Returning Customer'});
+        await expect(returningCustomerHeader).toHaveText('Returning Customer', {timeout: 5000});
     });
 
     test('Verify cart navigation', async ({page}) => {
