@@ -1,5 +1,6 @@
 import {test, expect} from '@playwright/test';
 import config from '../../../playwright.config';
+import {selectors} from '../../../selectors/selectors';
 
 test.describe('Search Bar Visibility', () => {
     const baseURL = config.use?.baseURL || '';
@@ -14,13 +15,11 @@ test.describe('Search Bar Visibility', () => {
         {name: 'Account Page', url: `${baseURL}/account`},
     ];
 
-    const searchBarLocator = '#text-search';
-
     for (const pageConfig of pages) {
         test(`Verify search bar visibility on the ${pageConfig.name}`, async ({page}) => {
             await page.goto(pageConfig.url);
-            const searchBar = page.locator(searchBarLocator);
-            await expect(searchBar).toBeVisible();
+            const searchBox = page.locator(selectors.homePage.searchBox);
+            await expect(searchBox).toBeVisible();
         });
     }
 });
