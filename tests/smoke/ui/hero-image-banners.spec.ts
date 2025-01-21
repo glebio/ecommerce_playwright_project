@@ -17,8 +17,8 @@ test.describe('Hero Image/Banners Verification', () => {
     });
 
     test('Verify hero image/banner is present and visible', async ({page}) => {
-        // Locate the hero image/banner element
-        const heroBanner = page.locator('.hero-banner, .carousel, .hero-image');
+        // Refine the locator to target the correct hero image/banner
+        const heroBanner = page.locator('.slider-container').first(); // Use .first() to target the first matching element
 
         // Check if the hero banner is present and visible
         await expect(heroBanner).toBeVisible();
