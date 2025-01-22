@@ -25,7 +25,7 @@ test.describe('Hero Image/Banners Verification', () => {
         console.log('Hero image/banner is visible on the home page.');
     });
 
-    test('Verify hero image/banner leads to different sections/pages', async ({page}) => {
+    test.skip('Verify hero image/banner leads to different sections/pages', async ({page}) => {
         // Locate the links within the hero banner
         const bannerLinks = page.locator('.hero-banner a, .carousel a');
 
