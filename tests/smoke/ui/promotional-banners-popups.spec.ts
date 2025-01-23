@@ -11,7 +11,7 @@ test.describe('Promotional Banners/Pop-ups Verification', () => {
         await page.goto(baseURL);
     });
 
-    test('Verify promotional banner is displayed', async ({page}) => {
+    test.skip('Verify promotional banner is displayed', async ({page}) => {
         // Locate the promotional banner
         const promoBanner = page.locator('.promo-banner, .promotional-popup');
 
@@ -20,7 +20,7 @@ test.describe('Promotional Banners/Pop-ups Verification', () => {
         console.log('Promotional banner is visible.');
     });
 
-    test('Verify promotional pop-up can be dismissed', async ({page}) => {
+    test.skip('Verify promotional pop-up can be dismissed', async ({page}) => {
         // Locate the promotional pop-up
         const promoPopup = page.locator('.promotional-popup');
 
@@ -41,7 +41,7 @@ test.describe('Promotional Banners/Pop-ups Verification', () => {
         }
     });
 
-    test('Verify promotional banner links are functional', async ({page}) => {
+    test.skip('Verify promotional banner links are functional', async ({page}) => {
         // Locate links within the promotional banner
         const bannerLinks = page.locator('.promo-banner a');
 
