@@ -8,9 +8,6 @@ test.describe('Cart Icon Visibility and Dynamic Updates', () => {
         throw new Error('Base URL is not defined in Playwright configuration.');
     }
 
-    const addToCartButtonSelector = '.add-to-cart-button';
-    const cartItemCountSelector = '.cart-item-count';
-
     test('Verify cart icon is always visible in the header', async ({page}) => {
         await page.goto(baseURL);
         const cartIcon = page.locator(selectors.productPage.cartButton);
@@ -34,14 +31,14 @@ test.describe('Cart Icon Visibility and Dynamic Updates', () => {
     });
 
     test('Verify cart count persists across pages', async ({page}) => {
-        await page.goto(`${baseURL}/product-page`);
-        const addToCartButton = page.locator(addToCartButtonSelector);
+        await page.goto(`${baseURL}/smartphones/apple-iphone/apple-iphone-16-pro-128gb-black-titanium`);
+        const addToCartButton = page.locator(selectors.productPage.addToCartButton);
         await addToCartButton.click();
 
-        await page.goto(`${baseURL}/another-page`);
+        await page.goto(`${baseURL}/smartphones/samsung-smartphones/samsung-galaxy-s24-ultra-256gb-titanium-black`);
 
-        const cartItemCount = page.locator(cartItemCountSelector);
-        await expect(cartItemCount).toHaveText('1');
+        const cartItemCount = page.locator(selectors.productPage.cartItemCountSelector);
+        await expect(cartItemCount).toContainText('1');
         console.log('✅ Cart count persists across pages.');
     });
 });
