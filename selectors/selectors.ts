@@ -26,6 +26,7 @@ export const selectors = {
         reviewRatingInput: 'input[name="rating"][value="{ratingValue}"]',
         reviewSubmitButton: '#button-review',
         productList: '.product-list',
+        cartItemCountSelector: '#cart-total',
         productName: '.product-layout .caption h4 a',
         reviewForm: 'form#form-review',
         reviewSuccessMessage: 'div.alert-success',
