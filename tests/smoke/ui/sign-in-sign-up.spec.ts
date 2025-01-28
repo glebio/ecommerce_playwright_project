@@ -1,5 +1,7 @@
 import {test, expect} from '@playwright/test';
+import {HomePage} from '../../../pageObjects/HomePage';
 import config from '../../../playwright.config';
+import {selectors} from "../../../selectors/selectors";
 
 // Feature: Sign In/Sign Up Verification
 test.describe('Sign In/Sign Up Options Verification', () => {
@@ -16,11 +18,8 @@ test.describe('Sign In/Sign Up Options Verification', () => {
     });
 
     test('Verify Sign In button is visible and clickable', async ({page}) => {
-        const signInButton = page.locator(signInButtonSelector);
-
-        await expect(signInButton).toBeVisible();
-
-        await signInButton.click();
+        const homePage = new HomePage(page);
+        await homePage.navigateToLogin();
         await page.waitForURL(`${baseURL}/sign-in`);
         expect(page.url()).toBe(`${baseURL}/sign-in`);
         console.log('✅ Sign In button is visible and navigates to the Sign In page.');
