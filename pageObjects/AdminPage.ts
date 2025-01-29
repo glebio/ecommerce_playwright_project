@@ -20,11 +20,17 @@ export class AdminPage {
 
     async navigateToReviewsSectionAndEdit(authorName: string) {
         // Step 1: Navigate to the Reviews section
+        await this.page.waitForSelector(selectors.adminPage.catalogDropdown, {state: 'visible'});
         await this.page.click(selectors.adminPage.catalogDropdown);
+
+        await this.page.waitForSelector(selectors.adminPage.reviewsLink, {state: 'visible'});
         await this.page.click(selectors.adminPage.reviewsLink);
 
-        // Step 2: Locate the review by author name and click the edit button
-        const editButtonSelector = selectors.adminPage.reviewEditButton.replace('{authorName}', authorName);
+        // Step 2: Locate and edit the review
+        const editButtonSelector = selectors.adminPage.reviewEditButton(authorName);
+
+        // Ensure the edit button is visible before clicking
+        await this.page.waitForSelector(editButtonSelector, {state: 'visible'});
         await this.page.click(editButtonSelector);
     }
 

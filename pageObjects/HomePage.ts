@@ -10,12 +10,12 @@ export class HomePage {
     }
 
     async navigateToSubCategory(categoryName: string, subCategoryName: string) {
-        // await this.page.click(selectors.homePage.browseCategoriesButton);
-
-        const categoryLink = selectors.homePage.categoryLink.replace('{categoryName}', categoryName);
+        const categoryLink = selectors.homePage.categoryLink(categoryName);
         await this.page.hover(categoryLink);
 
-        const subCategoryLink = selectors.homePage.subCategoryLink.replace('{subCategoryName}', subCategoryName);
+        const subCategoryLink = selectors.homePage.subCategoryLink(subCategoryName);
+        await this.page.waitForSelector(subCategoryLink, {state: 'visible'});
+
         await this.page.click(subCategoryLink);
     }
 
@@ -67,6 +67,7 @@ export class HomePage {
         await this.page.click(selectors.homePage.accountButton);
         await this.page.click(selectors.homePage.logoutButton);
     }
+
     async navigateToLogin() {
         // Click the Login button on the homepage
         await this.page.click(selectors.homePage.accountButton);
