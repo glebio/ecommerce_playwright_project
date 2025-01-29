@@ -7,8 +7,8 @@ export const selectors = {
         loginButton: '#pt-login-link',
         logoutButton: '#pt-logout-link',
         browseCategoriesButton: 'div[class="oc-menu-bar"]',
-        categoryLink: 'a:has-text("{categoryName}")',
-        subCategoryLink: 'a:has-text("{subCategoryName}")',
+        categoryLink: (categoryName: string) => `a:has-text("${categoryName}")`,
+        subCategoryLink: (subCategoryName: string) => `a:has-text("${subCategoryName}")`,
     },
     productPage: {
         listViewButton: '#list-view',
@@ -17,13 +17,13 @@ export const selectors = {
         addToCartButton: '#button-cart',
         cartButton: '#cart',
         viewCartButton: '//p[@class="text-right"]/a[1]',
-        filterOption: 'input[type="checkbox"][value="{{filterValue}}"]',
+        filterOption: (filterValue: string) => `input[type="checkbox"][value="${filterValue}"]`,
         sortingDropdown: 'select#input-sort',
-        sortingOption: 'option[value="{sortingValue}"]',
+        sortingOption: (sortingValue: string) => `option[value="${sortingValue}"]`,
         reviewTab: 'a[href="#tab-review"]',
         reviewNameInput: '#input-name',
         reviewTextInput: '#input-review',
-        reviewRatingInput: 'input[name="rating"][value="{ratingValue}"]',
+        reviewRatingInput: (ratingValue: string) => `input[name="rating"][value="${ratingValue}"]`,
         reviewSubmitButton: '#button-review',
         productList: '.product-list',
         cartItemCountSelector: '#cart-total',
@@ -37,7 +37,7 @@ export const selectors = {
         checkoutButton: 'a[class="btn btn-primary"]',
         couponCodeInput: '#input-coupon',
         applyCouponButton: 'input[value="Apply Coupon"]',
-        discountRow: '//td[@class=\'text-right\' and strong[contains(text(), \'Coupon (NY20)\')]]/following-sibling::td[contains(text(), \'$-199.80\')]',
+        discountRow: '//td[@class="text-right" and strong[contains(text(), "Coupon (NY20)")]]/following-sibling::td[contains(text(), "$-199.80")]',
         couponCodeSection: '//div[contains(@class, "panel-heading")]//a[contains(text(), "Use Coupon Code")]',
     },
     checkoutPage: {
@@ -84,20 +84,19 @@ export const selectors = {
         submitButton: 'button.button.btn:has-text("Login")',
     },
     filtersPage: {
-        categoryLink: 'a[href*="{categoryName}"]',
-        categoryHeader: 'h1:has-text("{categoryName}")',
-        filterDropdown: 'div.filter-dropdown[data-filter="{filterName}"]',
-        // filterOption: 'label:has-text("{filterOption}")',
+        categoryLink: (categoryName: string) => `a[href*="${categoryName}"]`,
+        categoryHeader: (categoryName: string) => `h1:has-text("${categoryName}")`,
+        filterDropdown: (filterName: string) => `div.filter-dropdown[data-filter="${filterName}"]`,
         productItem: 'h4[class="product-name"]',
         sortingDropdown: 'select#input-sort',
-        sortingOption: 'select#input-sort option[value*="sort={sortBy}&order={order}"]',
-        // Selector for specific filter option checkbox (e.g., Color > Beige)
-        filterOption: 'div[data-filter="{filterName}"] input[value="{filterOption}"]',
+        sortingOption: (sortBy: string, order: string) => `select#input-sort option[value*="sort=${sortBy}&order=${order}"]`,
+        filterOption: (filterName: string, filterOption: string) =>
+            `div[data-filter="${filterName}"] input[value="${filterOption}"]`,
         getFilterBlock: (filterName: string) =>
             `div.list-group-item.ocfilter-option:has-text("${filterName}")`,
         getFilterOption: (filterName: string, filterOption: string) =>
             `div.list-group-item.ocfilter-option:has-text("${filterName}") .ocf-option-values label:has-text("${filterOption}")`,
-        showProductsPopup: `div.popover-content > button.btn.btn-primary:not(.disabled):has-text("Show")`,
+        showProductsPopup: 'div.popover-content > button.btn.btn-primary:not(.disabled):has-text("Show")',
     },
     adminPage: {
         loginUsernameInput: '#input-username',
@@ -109,10 +108,10 @@ export const selectors = {
         reviewApproveButton: 'button[data-original-title="Approve"]',
         catalogDropdown: '#menu-catalog',
         reviewsLink: '//li/a[text()="Reviews"]',
-        reviewEditButton: '//tr[td[text()="{authorName}"]]//td[@class="text-right"]/a[contains(@class, "btn-primary")]',
-
+        reviewEditButton: (authorName: string) =>
+            `//tr[td[text()="${authorName}"]]//td[@class="text-right"]/a[contains(@class, "btn-primary")]`,
     },
     common: {
         addToCartButton: '#button-cart',
-    }
+    },
 };

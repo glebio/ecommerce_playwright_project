@@ -8,7 +8,11 @@ export class ReviewPage {
     async submitReview(reviewData: { name: string; review: string; rating: number }) {
         await this.page.fill(selectors.productPage.reviewNameInput, reviewData.name);
         await this.page.fill(selectors.productPage.reviewTextInput, reviewData.review);
-        await this.page.check(selectors.productPage.reviewRatingInput.replace('{ratingValue}', reviewData.rating.toString()));
+
+        const ratingInput = selectors.productPage.reviewRatingInput(reviewData.rating.toString());
+        await this.page.waitForSelector(ratingInput, {state: 'visible'});
+        await this.page.check(ratingInput);
+
         await this.page.click(selectors.productPage.reviewSubmitButton);
     }
 

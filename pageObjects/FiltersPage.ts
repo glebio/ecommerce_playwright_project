@@ -7,9 +7,16 @@ export class FiltersPage {
     }
 
     async navigateToCategory(categoryName: string) {
-        const categoryLink = selectors.filtersPage.categoryLink.replace('{categoryName}', categoryName);
+        const categoryLink = selectors.filtersPage.categoryLink(categoryName);
+
+        // Ensure the category link is visible before clicking
+        await this.page.waitForSelector(categoryLink, {state: 'visible'});
         await this.page.click(categoryLink);
-        await this.page.waitForSelector(selectors.filtersPage.categoryHeader.replace('{categoryName}', categoryName));
+
+        const categoryHeader = selectors.filtersPage.categoryHeader(categoryName);
+
+        // Wait for the category header to confirm navigation
+        await this.page.waitForSelector(categoryHeader, {state: 'visible'});
     }
 
     async applyCategoryFilter(filterName: string, filterOption: string) {
