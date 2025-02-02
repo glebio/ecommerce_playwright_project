@@ -20,8 +20,8 @@ test.describe('Sign In/Sign Up Options Verification', () => {
     test('Verify Sign In button is visible and clickable', async ({page}) => {
         const homePage = new HomePage(page);
         await homePage.navigateToLogin();
-        await page.waitForURL(`${baseURL}/sign-in`);
-        expect(page.url()).toBe(`${baseURL}/sign-in`);
+        await page.waitForURL(`${baseURL}/login`);
+        expect(page.url()).toBe(`${baseURL}/login`);
         console.log('✅ Sign In button is visible and navigates to the Sign In page.');
     });
 
