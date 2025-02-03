@@ -83,6 +83,12 @@ export const selectors = {
         passwordInput: '#input-password',
         submitButton: 'button.button.btn:has-text("Login")',
     },
+    loginPage: {
+        loginForm: '#login-form', // Селектор формы входа на странице входа
+    },
+    registerPage: {
+        registerForm: '#register-form', // Селектор формы регистрации на странице регистрации
+    },
     filtersPage: {
         categoryLink: (categoryName: string) => `a[href*="${categoryName}"]`,
         categoryHeader: (categoryName: string) => `h1:has-text("${categoryName}")`,

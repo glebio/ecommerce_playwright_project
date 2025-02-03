@@ -72,7 +72,14 @@ export class HomePage {
         // Click the Login button on the homepage
         await this.page.click(selectors.homePage.accountButton);
         await this.page.click(selectors.homePage.loginButton);
-        // await this.page.waitForSelector(selectors.loginPopup.popupContainer);
+        await this.page.waitForSelector(selectors.loginPage.loginForm);
+    }
+
+    async navigateToRegister() {
+        // Click the Register button on the homepage
+        await this.page.click(selectors.homePage.accountButton);
+        await this.page.click(selectors.homePage.registerButton);
+        await this.page.waitForSelector(selectors.registerPage.registerForm);
     }
 
     async loginUser(userData: { email: string, password: string }) {

@@ -26,13 +26,10 @@ test.describe('Sign In/Sign Up Options Verification', () => {
     });
 
     test('Verify Sign Up button is visible and clickable', async ({page}) => {
-        const signUpButton = page.locator(signUpButtonSelector);
-
-        await expect(signUpButton).toBeVisible();
-
-        await signUpButton.click();
-        await page.waitForURL(`${baseURL}/sign-up`);
-        expect(page.url()).toBe(`${baseURL}/sign-up`);
+        const homePage = new HomePage(page);
+        await homePage.navigateToRegister();
+        await page.waitForURL(`${baseURL}/register`);
+        expect(page.url()).toBe(`${baseURL}/register`);
         console.log('✅ Sign Up button is visible and navigates to the Sign Up page.');
     });
 
