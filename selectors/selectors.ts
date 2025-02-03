@@ -10,6 +10,7 @@ export const selectors = {
         categoryLink: (categoryName: string) => `a:has-text("${categoryName}")`,
         subCategoryLink: (subCategoryName: string) => `a:has-text("${subCategoryName}")`,
     },
+
     productPage: {
         listViewButton: '#list-view',
         productItem: '.product-item h4',
@@ -32,6 +33,7 @@ export const selectors = {
         reviewSuccessMessage: 'div.alert-success',
         approvedReview: '//td[@colspan="2"]/p[contains(text(),"This is an excellent product! Highly recommended.")]',
     },
+
     cartPage: {
         cartItem: 'div[class="table-responsive"] tbody tr',
         checkoutButton: 'a[class="btn btn-primary"]',
@@ -40,6 +42,7 @@ export const selectors = {
         discountRow: '//td[@class="text-right" and strong[contains(text(), "Coupon (NY20)")]]/following-sibling::td[contains(text(), "$-199.80")]',
         couponCodeSection: '//div[contains(@class, "panel-heading")]//a[contains(text(), "Use Coupon Code")]',
     },
+
     checkoutPage: {
         guestCheckoutRadio: 'input[value="guest"]',
         continueAccountButton: '#button-account',
@@ -58,37 +61,42 @@ export const selectors = {
         deliveryMethodButton: '#button-shipping-method',
         confirmOrderButton: '#button-confirm',
     },
+
     orderSuccessPage: {
         successMessage: '//div[@id="content"]/p[1]',
     },
-    popup: {
+
+    popups: {
         closeButton: '#popup2 > span > span',
+        registerPopup: {
+            popupContainer: 'div[class="account-register"]',
+            firstNameInput: '#input-firstname',
+            lastNameInput: '#input-lastname',
+            emailInput: '#input-register-email',
+            phoneInput: '#input-telephone',
+            passwordInput: '#input-register-password',
+            confirmPasswordInput: '#input-confirm',
+            privacyPolicyCheckbox: 'input[name="agree"]',
+            submitButton: 'input.btn.btn-primary[value="Continue"]',
+            successPopup: '//div[@class="account-success"]',
+            continueButton: '(//button[@class="button" and span[text()="Continue"]])[1]',
+        },
+        loginPopup: {
+            popupContainer: 'div[class="login-form-content"]',
+            emailInput: '#input-email',
+            passwordInput: '#input-password',
+            submitButton: 'button.button.btn:has-text("Login")',
+        },
     },
-    registerPopup: {
-        popupContainer: 'div[class="account-register"]',
-        firstNameInput: '#input-firstname',
-        lastNameInput: '#input-lastname',
-        emailInput: '#input-register-email',
-        phoneInput: '#input-telephone',
-        passwordInput: '#input-register-password',
-        confirmPasswordInput: '#input-confirm',
-        privacyPolicyCheckbox: 'input[name="agree"]',
-        submitButton: 'input.btn.btn-primary[value="Continue"]',
-        successPopup: '//div[@class="account-success"]',
-        continueButton: '(//button[@class="button" and span[text()="Continue"]])[1]',
-    },
-    loginPopup: {
-        popupContainer: 'div[class="login-form-content"]',
-        emailInput: '#input-email',
-        passwordInput: '#input-password',
-        submitButton: 'button.button.btn:has-text("Login")',
-    },
+
     loginPage: {
-        loginForm: '#login-form', // Селектор формы входа на странице входа
+        loginForm: '#login-form',
     },
+
     registerPage: {
-        registerForm: '#register-form', // Селектор формы регистрации на странице регистрации
+        registerForm: '#register-form',
     },
+
     filtersPage: {
         categoryLink: (categoryName: string) => `a[href*="${categoryName}"]`,
         categoryHeader: (categoryName: string) => `h1:has-text("${categoryName}")`,
@@ -104,6 +112,7 @@ export const selectors = {
             `div.list-group-item.ocfilter-option:has-text("${filterName}") .ocf-option-values label:has-text("${filterOption}")`,
         showProductsPopup: 'div.popover-content > button.btn.btn-primary:not(.disabled):has-text("Show")',
     },
+
     adminPage: {
         loginUsernameInput: '#input-username',
         loginPasswordInput: '#input-password',
@@ -117,6 +126,7 @@ export const selectors = {
         reviewEditButton: (authorName: string) =>
             `//tr[td[text()="${authorName}"]]//td[@class="text-right"]/a[contains(@class, "btn-primary")]`,
     },
+
     common: {
         addToCartButton: '#button-cart',
     },
