@@ -20,7 +20,7 @@ export class HomePage {
     }
 
     async closePopupIfAppears() {
-        const popupCloseButton = selectors.popup.closeButton;
+        const popupCloseButton = selectors.popups.closeButton;
         if (await this.page.locator(popupCloseButton).isVisible()) {
             await this.page.click(popupCloseButton);
         }
@@ -43,23 +43,23 @@ export class HomePage {
         await this.page.click(selectors.homePage.registerButton);
 
         // Wait for the registration popup to appear
-        const registrationPopup = selectors.registerPopup.popupContainer;
+        const registrationPopup = selectors.popups.registerPopup.popupContainer;
         await this.page.waitForSelector(registrationPopup);
 
         // Fill out the registration form
-        await this.page.fill(selectors.registerPopup.firstNameInput, userData.firstName);
-        await this.page.fill(selectors.registerPopup.lastNameInput, userData.lastName);
-        await this.page.fill(selectors.registerPopup.emailInput, userData.email);
-        await this.page.fill(selectors.registerPopup.phoneInput, userData.phone);
-        await this.page.fill(selectors.registerPopup.passwordInput, userData.password);
-        await this.page.fill(selectors.registerPopup.confirmPasswordInput, userData.password);
-        await this.page.check(selectors.registerPopup.privacyPolicyCheckbox);
-        await this.page.click(selectors.registerPopup.submitButton);
+        await this.page.fill(selectors.popups.registerPopup.firstNameInput, userData.firstName);
+        await this.page.fill(selectors.popups.registerPopup.lastNameInput, userData.lastName);
+        await this.page.fill(selectors.popups.registerPopup.emailInput, userData.email);
+        await this.page.fill(selectors.popups.registerPopup.phoneInput, userData.phone);
+        await this.page.fill(selectors.popups.registerPopup.passwordInput, userData.password);
+        await this.page.fill(selectors.popups.registerPopup.confirmPasswordInput, userData.password);
+        await this.page.check(selectors.popups.registerPopup.privacyPolicyCheckbox);
+        await this.page.click(selectors.popups.registerPopup.submitButton);
 
         // Handle the success registration popup
-        const successPopupSelector = selectors.registerPopup.successPopup;
+        const successPopupSelector = selectors.popups.registerPopup.successPopup;
         await this.page.waitForSelector(successPopupSelector);
-        await this.page.click(selectors.registerPopup.continueButton);
+        await this.page.click(selectors.popups.registerPopup.continueButton);
     }
 
     async navigateToLogout() {
@@ -84,8 +84,8 @@ export class HomePage {
 
     async loginUser(userData: { email: string, password: string }) {
         // Fill out the login form
-        await this.page.fill(selectors.loginPopup.emailInput, userData.email);
-        await this.page.fill(selectors.loginPopup.passwordInput, userData.password);
-        await this.page.click(selectors.loginPopup.submitButton);
+        await this.page.fill(selectors.popups.loginPopup.emailInput, userData.email);
+        await this.page.fill(selectors.popups.loginPopup.passwordInput, userData.password);
+        await this.page.click(selectors.popups.loginPopup.submitButton);
     }
 }
