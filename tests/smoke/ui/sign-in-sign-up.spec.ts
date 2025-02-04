@@ -10,9 +10,6 @@ test.describe('Sign In/Sign Up Options Verification', () => {
         throw new Error('Base URL is not defined in Playwright configuration.');
     }
 
-    const signInButtonSelector = 'a:has-text("Sign In")'; // Update selector if needed
-    const signUpButtonSelector = 'a:has-text("Sign Up")'; // Update selector if needed
-
     test.beforeEach(async ({page}) => {
         await page.goto(baseURL);
     });
@@ -34,8 +31,9 @@ test.describe('Sign In/Sign Up Options Verification', () => {
     });
 
     test('Verify both Sign In and Sign Up options are present on the home page', async ({page}) => {
-        const signInButton = page.locator(signInButtonSelector);
-        const signUpButton = page.locator(signUpButtonSelector);
+        await page.click(selectors.homePage.accountButton);
+        const signInButton = page.locator(selectors.homePage.loginButton);
+        const signUpButton = page.locator(selectors.homePage.registerButton);
 
         await expect(signInButton).toBeVisible();
         await expect(signUpButton).toBeVisible();
