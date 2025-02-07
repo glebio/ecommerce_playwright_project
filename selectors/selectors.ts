@@ -126,6 +126,11 @@ export const selectors = {
         reviewEditButton: (authorName: string) =>
             `//tr[td[text()="${authorName}"]]//td[@class="text-right"]/a[contains(@class, "btn-primary")]`,
     },
+    breadcrumbs: {
+        container: '.breadcrumb',
+        items: '.breadcrumb li',
+        links: '.breadcrumb li a',
+    },
 
     common: {
         addToCartButton: '#button-cart',
