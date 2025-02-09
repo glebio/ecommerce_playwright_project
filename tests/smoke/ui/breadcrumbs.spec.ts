@@ -1,6 +1,6 @@
 import {test, expect} from '@playwright/test';
 import config from '../../../playwright.config';
-import {selectors} from "../../../selectors/selectors";
+import {selectors} from '../../../selectors/selectors';
 
 // Feature: Breadcrumbs Verification
 // Ensures breadcrumbs are visible, reflect correct navigation paths, and are clickable.
@@ -21,7 +21,7 @@ test.describe('Breadcrumbs Verification', () => {
     test('Verify breadcrumbs are visible on category page and clickable', async ({page}) => {
         await page.goto(CATEGORY_PAGE);
 
-        // Verify breadcrumbs are visible
+        // Step 1: Verify breadcrumbs container is visible
         const breadcrumbs = page.locator(selectors.breadcrumbs.container);
         await expect(breadcrumbs).toBeVisible();
         console.log('✅ Breadcrumbs are visible on the category page.');
@@ -35,7 +35,7 @@ test.describe('Breadcrumbs Verification', () => {
         // Click on the "Home" breadcrumb and verify navigation
         const homeBreadcrumb = breadcrumbs.locator(selectors.breadcrumbs.links).first();
         await homeBreadcrumb.click();
-        await page.waitForURL(BASE_URL); // Explicitly wait for navigation
+        await page.waitForURL(BASE_URL, {timeout: 5000}); // Wait for navigation with a timeout
         await expect(page).toHaveURL(BASE_URL);
         console.log('✅ Clicking on breadcrumb navigates to the correct page.');
     });
@@ -50,6 +50,7 @@ test.describe('Breadcrumbs Verification', () => {
 
         // Verify breadcrumb structure
         const breadcrumbItems = breadcrumbs.locator(selectors.breadcrumbs.items);
+        await breadcrumbItems.first().waitFor({state: 'visible'});
         const breadcrumbCount = await breadcrumbItems.count();
         expect(breadcrumbCount).toBeGreaterThan(1);
         console.log(`✅ Breadcrumbs contain ${breadcrumbCount} elements, confirming navigation path.`);
@@ -57,7 +58,7 @@ test.describe('Breadcrumbs Verification', () => {
         // Click on the category breadcrumb and verify navigation
         const categoryBreadcrumb = breadcrumbItems.nth(1).locator(selectors.breadcrumbs.links);
         await categoryBreadcrumb.click();
-        await page.waitForURL(CATEGORY_PAGE); // Explicitly wait for navigation
+        await page.waitForURL(CATEGORY_PAGE, {timeout: 5000}); // Wait for navigation with a timeout
         await expect(page).toHaveURL(CATEGORY_PAGE);
         console.log('✅ Clicking category breadcrumb navigates correctly.');
     });
