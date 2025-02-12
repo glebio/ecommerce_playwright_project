@@ -127,9 +127,9 @@ export const selectors = {
             `//tr[td[text()="${authorName}"]]//td[@class="text-right"]/a[contains(@class, "btn-primary")]`,
     },
     breadcrumbs: {
-        container: '.breadcrumbs', // Контейнер
-        items: 'ul.breadcrumb li', // Элементы внутри контейнера
-        links: 'ul.breadcrumb li a', // Ссылки внутри элементов
+        container: '.breadcrumbs',
+        items: 'ul.breadcrumb li',
+        links: 'ul.breadcrumb li a',
     },
 
     common: {
