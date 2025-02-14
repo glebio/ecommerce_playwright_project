@@ -1,6 +1,6 @@
 import {test, expect} from '@playwright/test';
 import config from '../../../playwright.config';
-import {selectors} from '../../../selectors/selectors'; // Assuming selectors are defined here
+import {selectors} from '../../../selectors/selectors';
 
 // Feature: Footer and Social Links Verification
 // This test suite ensures that all footer links and social media icons are present, visible, and clickable.
@@ -36,7 +36,7 @@ test.describe('Footer and Social Links Verification', () => {
 
     test('Verify social media icons are present and clickable', async ({page}) => {
         // Locate all social media icons
-        const socialIcons = page.locator(selectors.footer.socialMediaIcons); // Example selector: '.social-icons a'
+        const socialIcons = page.locator(selectors.footer.socialMediaIcons);
 
         const iconCount = await socialIcons.count();
         expect(iconCount).toBeGreaterThan(0);
