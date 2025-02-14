@@ -132,8 +132,8 @@ export const selectors = {
         links: 'ul.breadcrumb li a',
     },
     footer: {
-        links: 'footer a',               // Adjust based on actual footer link selectors
-        socialMediaIcons: '.social-icons a',  // Adjust based on actual social media icon selectors
+        links: 'footer a',
+        socialMediaIcons: '.social a',
     },
 
     common: {
