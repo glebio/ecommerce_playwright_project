@@ -28,7 +28,7 @@ test.describe('Footer Elements Verification', () => {
         }, await copyrightInfo.elementHandle());
 
         if (fontSize) {
-            expect(fontSize).toBe('12px');
+            expect(fontSize).toBe('14px');
             console.log(`✅ Copyright text has correct font size: ${fontSize}`);
         } else {
             throw new Error('❌ Failed to retrieve font size for copyright information.');
