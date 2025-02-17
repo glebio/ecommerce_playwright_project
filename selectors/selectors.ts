@@ -134,9 +134,9 @@ export const selectors = {
     footer: {
         links: 'footer a',
         socialMediaIcons: '.social a',
-        copyright: 'footer .copyright',
-        companyDetails: 'footer .company-details',
-        paymentIcons: 'footer .payment-icons img',
+        copyright: 'p.text-powered',
+        companyDetails: 'p.txt_info',
+        paymentIcons: '.footer-copyright .payment img',
     },
 
     common: {
