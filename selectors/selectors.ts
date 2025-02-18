@@ -138,6 +138,16 @@ export const selectors = {
         companyDetails: 'p.txt_info',
         paymentIcons: '.footer-copyright .payment img',
     },
+    errorPage: {
+        errorMessage: '.error-message',
+        notFoundMessage: 'h1:has-text("Page Not Found")',
+        errorContainer: '.error-container',
+    },
+    loaders: {
+        generalLoader: '.general-loader',
+        spinner: '.loading-spinner',
+        progressBar: '.progress-bar',
+    },
 
     common: {
         addToCartButton: '#button-cart',
