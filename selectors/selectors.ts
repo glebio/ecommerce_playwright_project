@@ -139,7 +139,8 @@ export const selectors = {
         paymentIcons: '.footer-copyright .payment img',
     },
     errorPage: {
-        errorMessage: '.error-message',
+        errorMessage: '#content p',
+        continueButton: '#content .buttons .btn-primary',
         notFoundMessage: 'h1:has-text("Page Not Found")',
         errorContainer: '.error-container',
     },

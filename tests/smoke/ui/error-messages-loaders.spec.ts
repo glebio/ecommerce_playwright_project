@@ -20,7 +20,7 @@ test.describe('Error Messages and Loaders Verification', () => {
         console.log('✅ 404 error message is displayed correctly.');
 
         // Verify the error message text
-        await expect(errorMessage).toHaveText(/Page not found|404/i);
+        await expect(errorMessage).toHaveText(/he page you requested cannot be found.|404/i);
     });
 
     test('Verify loader is visible on slow-loading pages', async ({page}) => {
