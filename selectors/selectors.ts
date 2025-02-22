@@ -145,7 +145,7 @@ export const selectors = {
         errorContainer: '.error-container',
     },
     loaders: {
-        generalLoader: '.general-loader',
+        generalLoader: '.grid-style .swiper-lazy-preloader',
         spinner: '.loading-spinner',
         progressBar: '.progress-bar',
     },
