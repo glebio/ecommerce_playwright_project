@@ -31,6 +31,9 @@ export const selectors = {
         productName: '.product-layout .caption h4 a',
         reviewForm: 'form#form-review',
         reviewSuccessMessage: 'div.alert-success',
+        relatedProductsSection: '.related-products',
+        productItemLink: '.product-item a',
+        productTitle: 'h1.product-title',
         approvedReview: '//td[@colspan="2"]/p[contains(text(),"This is an excellent product! Highly recommended.")]',
     },
 
