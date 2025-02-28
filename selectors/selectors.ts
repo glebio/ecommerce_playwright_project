@@ -35,6 +35,11 @@ export const selectors = {
         productItemLink: '.product-item a',
         productTitle: 'h1.product-title',
         approvedReview: '//td[@colspan="2"]/p[contains(text(),"This is an excellent product! Highly recommended.")]',
+        outOfStockMessage: '.out-of-stock-notice',
+        notifyMeButton: '.notify-me-button',
+        notifyMeEmailInput: 'input[name="notify-email"]',
+        notifyMeSubmitButton: 'button.notify-submit',
+        notifyMeSuccessMessage: '.notify-success-message',
     },
 
     cartPage: {
