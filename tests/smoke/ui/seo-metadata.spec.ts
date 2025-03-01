@@ -1,7 +1,7 @@
 import {test, expect} from '@playwright/test';
 import config from "../../../playwright.config";
 
-test.describe('SEO Metadata Verification', () => {
+test.describe('SEO Metadata Verification @smoke', () => {
     // Extract baseURL from Playwright configuration
     const baseURL = config.use?.baseURL || '';
     if (!baseURL) {

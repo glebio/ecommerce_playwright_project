@@ -4,7 +4,7 @@ import config from '../../../playwright.config';
 import {selectors} from "../../../selectors/selectors";
 
 // Feature: Sign In/Sign Up Verification
-test.describe('Sign In/Sign Up Options Verification', () => {
+test.describe('Sign In/Sign Up Options Verification @smoke', () => {
     const baseURL = config.use?.baseURL || 'https://shop.qaresults.com';
     if (!baseURL) {
         throw new Error('Base URL is not defined in Playwright configuration.');

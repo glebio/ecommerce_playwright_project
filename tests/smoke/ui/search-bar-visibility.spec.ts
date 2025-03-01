@@ -2,7 +2,7 @@ import {test, expect} from '@playwright/test';
 import config from '../../../playwright.config';
 import {selectors} from '../../../selectors/selectors';
 
-test.describe('Search Bar Visibility', () => {
+test.describe('Search Bar Visibility @smoke', () => {
     const baseURL = config.use?.baseURL || '';
     if (!baseURL) {
         throw new Error('Base URL is not defined in Playwright configuration.');
