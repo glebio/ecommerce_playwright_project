@@ -13,8 +13,11 @@ export default defineConfig({
         navigationTimeout: 30000,
     },
     reporter: [
-        ['list'], // Default list reporter
-        ['json', {outputFile: 'test-results.json'}], // JSON reporter for custom tooling
+        ['list'],
+        ['json', {outputFile: 'test-results.json'}],
+        ['html'],
+        ['junit', {outputFile: 'results.xml'}],
+        ['allure-playwright'],
     ],
     projects: [
         {

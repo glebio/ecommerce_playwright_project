@@ -7,7 +7,7 @@ import {searchAndAddProductToCart} from '../../../utils/cartActions';
 import {generateAddressData} from '../../../utils/addressUtils';
 import {selectors} from '../../../selectors/selectors';
 
-test('Smoke: Add product to the cart and proceed to checkout', async ({page}) => {
+test('Smoke: Add product to the cart and proceed to checkout @smoke', async ({page}) => {
     const homePage = new HomePage(page);
     const productPage = new ProductPage(page);
     const checkoutPage = new CheckoutPage(page);

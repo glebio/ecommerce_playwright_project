@@ -8,9 +8,10 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "@playwright/test": "^1.47.2",
+    "@playwright/test": "^1.50.1",
     "@types/axios": "^0.9.36",
-    "@types/node": "^22.7.4"
+    "@types/node": "^22.7.4",
+    "allure-playwright": "^3.2.0"
   },
   "dependencies": {
     "@faker-js/faker": "^9.0.3",
