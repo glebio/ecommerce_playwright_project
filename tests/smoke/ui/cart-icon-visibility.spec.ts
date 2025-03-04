@@ -12,7 +12,7 @@ if (!BASE_URL) {
 }
 
 // Feature: Sign In/Sign Up Verification
-test.describe('Sign In/Sign Up Options Verification', () => {
+test.describe('Sign In/Sign Up Options Verification @smoke', () => {
 
     test.beforeEach(async ({page}) => {
         await page.goto(BASE_URL);

@@ -5,7 +5,7 @@ import {selectors} from '../../../selectors/selectors';
 // Feature: Error Messages and Loaders Verification
 // Ensures proper display of error messages and loaders for invalid links and slow-loading pages
 
-test.describe('Error Messages and Loaders Verification', () => {
+test.describe('Error Messages and Loaders Verification @smoke', () => {
     const BASE_URL = config.use?.baseURL || 'https://shop.qaresults.com';
     if (!BASE_URL) {
         throw new Error('Base URL is not defined in Playwright configuration.');
