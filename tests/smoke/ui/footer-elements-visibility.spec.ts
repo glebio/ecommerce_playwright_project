@@ -5,7 +5,7 @@ import {selectors} from '../../../selectors/selectors';
 // Feature: Footer Elements Verification
 // This test suite ensures that essential footer elements (e.g., copyright, company details, and payment method icons) are present, visible, and styled correctly.
 
-test.describe('Footer Elements Verification', () => {
+test.describe('Footer Elements Verification @smoke', () => {
     const BASE_URL = config.use?.baseURL || 'https://shop.qaresults.com';
     if (!BASE_URL) {
         throw new Error('Base URL is not defined in Playwright configuration.');
