@@ -5,7 +5,7 @@ import {selectors} from '../../../selectors/selectors';
 // Feature: Breadcrumbs Verification
 // Ensures breadcrumbs are visible, reflect correct navigation paths, and are clickable.
 
-test.describe('Breadcrumbs Verification', () => {
+test.describe('Breadcrumbs Verification @smoke', () => {
     const BASE_URL = config.use?.baseURL || 'https://shop.qaresults.com';
     if (!BASE_URL) {
         throw new Error('Base URL is not defined in Playwright configuration.');

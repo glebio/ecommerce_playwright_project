@@ -1,7 +1,7 @@
 import {test, expect} from '@playwright/test';
 import config from '../../../playwright.config';
 
-test.describe('Main Menu Navigation', () => {
+test.describe('Main Menu Navigation @smoke', () => {
     // Extract base URL from configuration
     const baseURL = config.use?.baseURL || '';
     if (!baseURL) {

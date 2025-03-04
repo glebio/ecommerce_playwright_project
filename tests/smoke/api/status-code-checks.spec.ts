@@ -1,6 +1,6 @@
 import {test, expect} from '@playwright/test';
 
-test.describe('Smoke Tests for Status Codes', () => {
+test.describe('Smoke Tests for Status Codes @smoke', () => {
     test('Verify status codes for key pages @smoke', async ({request, baseURL}) => {
         test.info().annotations.push({type: 'tag', description: 'smoke'});
         if (!baseURL) {
