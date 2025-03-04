@@ -5,7 +5,7 @@ import {selectors} from '../../../selectors/selectors';
 // Feature: Footer and Social Links Verification
 // This test suite ensures that all footer links and social media icons are present, visible, and clickable.
 
-test.describe('Footer and Social Links Verification', () => {
+test.describe('Footer and Social Links Verification @smoke', () => {
     const BASE_URL = config.use?.baseURL || 'https://shop.qaresults.com';
     if (!BASE_URL) {
         throw new Error('Base URL is not defined in Playwright configuration.');

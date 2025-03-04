@@ -55,7 +55,7 @@ test.describe('SEO Metadata Verification @smoke', () => {
         expect(normalizedBaseTagURL).toBe(normalizedBaseURL); // Verify it matches the expected base URL
     });
 
-    test.describe('SEO Metadata Verification', () => {
+    test.describe('SEO Metadata Verification @smoke', () => {
         test.skip('Verify canonical URL (skipped temporarily)', async ({page}) => {
             await page.goto(baseURL);
             // Attempt to retrieve the canonical URL
