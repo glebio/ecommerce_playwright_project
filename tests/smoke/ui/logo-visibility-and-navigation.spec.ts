@@ -1,7 +1,7 @@
 import {test, expect} from '@playwright/test';
 import config from "../../../playwright.config";
 
-test.describe('Logo Display Verification', () => {
+test.describe('Logo Display Verification @smoke', () => {
     const baseURL = config.use?.baseURL || '';
     if (!baseURL) {
         throw new Error('Base URL is not defined in Playwright configuration.');
