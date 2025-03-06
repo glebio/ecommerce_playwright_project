@@ -6,7 +6,7 @@ import config from '../../../playwright.config';
  * This test suite verifies the presence, visibility, and functionality of hero images or banners on the home page.
  */
 
-test.describe('Hero Image/Banners Verification', () => {
+test.describe('Hero Image/Banners Verification @smoke', () => {
     const baseURL = config.use?.baseURL || '';
     if (!baseURL) {
         throw new Error('Base URL is not defined in Playwright configuration.');
