@@ -1,6 +1,6 @@
 import {test, expect} from '@playwright/test';
 
-test('Verify that all main resources load without errors', async ({page}) => {
+test('Verify that all main resources load without errors @smoke', async ({page}) => {
     const resourceErrors: string[] = [];
     const consoleErrors: string[] = [];
     const brokenImages: string[] = [];

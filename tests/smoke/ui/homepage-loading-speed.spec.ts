@@ -1,7 +1,7 @@
 import {test, expect} from '@playwright/test';
 import config from "../../../playwright.config";
 
-test('Check page load speed and performance metrics', async ({page}) => {
+test('Check page load speed and performance metrics @smoke', async ({page}) => {
     // Extract baseURL from Playwright configuration
     const baseURL = config.use?.baseURL || '';
     if (!baseURL) {
