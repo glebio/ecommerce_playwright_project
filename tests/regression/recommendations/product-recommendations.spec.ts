@@ -5,7 +5,7 @@ import {selectors} from '../../../selectors/selectors';
 // Feature: Product Recommendations Verification
 // Verify that the "Related Products" or "You May Also Like" sections display appropriate items.
 
-test.describe('Product Recommendations Verification', () => {
+test.describe('Product Recommendations Verification @regression', () => {
     const BASE_URL = config.use?.baseURL || 'https://shop.qaresults.com';
 
     test.beforeEach(async ({page}) => {
