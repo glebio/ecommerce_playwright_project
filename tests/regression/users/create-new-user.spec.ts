@@ -10,7 +10,7 @@ interface UserData {
     password: string;
 }
 
-test.describe('Tests for User registration and login flow.', () => {
+test.describe('Tests for User registration and login flow @regression', () => {
     test('User registration and login flow', async ({page}) => {
         const homePage = new HomePage(page);
 
