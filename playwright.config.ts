@@ -12,13 +12,11 @@ export default defineConfig({
         trace: 'on-first-retry',
         navigationTimeout: 30000,
     },
-    reporter: [
-        ['list'],
-        ['json', {outputFile: 'test-results.json'}],
-        ['html'],
-        ['junit', {outputFile: 'results.xml'}],
-        ['allure-playwright'],
-    ],
+    reporter: String(process.env['PW_TEST_REPORTER'] || '').toLowerCase().includes('idea')
+        ? 'null'
+        : [
+            ['allure-playwright'],
+        ],
     projects: [
         {
             name: 'Google Chrome',
