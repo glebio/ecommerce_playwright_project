@@ -4,7 +4,7 @@ import {ProductPage} from '../../../pageObjects/ProductPage';
 import {ReviewPage} from '../../../pageObjects/ReviewPage';
 import {AdminPage} from '../../../pageObjects/AdminPage';
 
-test.describe('Product Review Submission and Approval', () => {
+test.describe('Product Review Submission and Approval @regression', () => {
 
     test('Add a review: Verify the review submission and approval process', async ({page}) => {
         const homePage = new HomePage(page);
