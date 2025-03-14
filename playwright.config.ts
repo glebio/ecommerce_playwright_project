@@ -27,6 +27,6 @@ export default defineConfig({
         },
     ],
     metadata: {
-        tags: ['smoke'], // Add metadata for smoke tests
+        tags: ['smoke'],
     },
 });
