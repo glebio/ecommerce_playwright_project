@@ -32,8 +32,6 @@ test.describe('Promotional Banners/Pop-ups Verification @smoke', () => {
             await expect(closeButton).toBeVisible();
 
             await closeButton.click();
-
-            // Verify the pop-up is no longer visible
             await expect(promoPopup).not.toBeVisible();
             console.log('Promotional pop-up was dismissed successfully.');
         } else {
