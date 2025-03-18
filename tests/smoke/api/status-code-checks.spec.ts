@@ -15,7 +15,7 @@ test.describe('Smoke Tests for Status Codes @smoke', () => {
                 url: `${baseURL}/smartphones-and-accessories/smartphones/apple-iphone-16-pro-512gb-black-titanium`,
                 name: 'Product Page',
                 expectedStatus: 200
-            }, // Fixed URL
+            },
             {url: `${baseURL}/index.php?route=checkout/cart`, name: 'Checkout Page', expectedStatus: 200},
             {
                 url: `${baseURL}/index.php?route=product/product&product_id=51&search=iphone&category_id=0`,
