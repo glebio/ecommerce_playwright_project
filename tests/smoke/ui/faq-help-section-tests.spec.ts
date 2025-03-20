@@ -44,7 +44,8 @@ test.describe('FAQ and Help Section Verification', () => {
 
         // Check if at least one help topic exists
         const helpTopics = page.locator('.help-topic'); // Update selector if needed
-        await expect(helpTopics).toHaveCountGreaterThan(0);
+        const count = await helpTopics.count();
+        expect(count).toBeGreaterThan(0);
         console.log('✅ Help page contains relevant topics.');
     });
 });
