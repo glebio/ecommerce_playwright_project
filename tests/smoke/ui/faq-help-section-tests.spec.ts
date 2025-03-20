@@ -28,7 +28,8 @@ test.describe('FAQ and Help Section Verification', () => {
 
         // Check if at least one FAQ entry exists
         const faqEntries = page.locator('.faq-item'); // Update selector if needed
-        await expect(faqEntries).toHaveCountGreaterThan(0);
+        const count = await faqEntries.count();
+        expect(count).toBeGreaterThan(0);
         console.log('✅ FAQ page contains relevant entries.');
     });
 
