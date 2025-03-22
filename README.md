@@ -22,8 +22,6 @@ Automated Testing!
 - [Test Reports](#test-reports)
 - [Contributing](#contributing)
 - [License](#license)
-- [Tips for Maintaining This README](#tips-for-maintaining-this-readme)
-- [How to Use This](#how-to-use-this)
 
 ## Overview
 
