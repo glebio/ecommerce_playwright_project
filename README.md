@@ -256,21 +256,3 @@ tests, remember to update this coverage list (or any separate documentation) to 
 ## License
 
 This project is licensed under the **MIT License**.
-
----
-
-### Tips for Maintaining This README
-
-- Keep the **Test Coverage** section updated whenever you add or modify test suites.
-- If the README grows too large, move the detailed coverage to a dedicated file (e.g., `TESTS.md`) and link to it here.
-- Consider adding CI badges, a Table of Contents, or any other helpful references for contributors or recruiters.
-
----
-
-### How to Use This
-
-1. **Copy all the text** above into your `README.md`.
-2. **Adjust** any references (like the GitHub URL in the clone command, or mention of `playwright.config.ts`) to match
-   your actual project.
-3. **Commit and push** the file to your repository.
-4. **Open a Pull Request** (PR) or merge directly into your main branch if you’re the sole maintainer.
