@@ -4,6 +4,13 @@
 ![Playwright](https://img.shields.io/badge/playwright-tested-brightgreen)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
+---
+
+Made with ❤️ by the professionals at [**QAresults**](https://qaresults.com) — Let’s Make Your Product Better with
+Automated Testing!
+
+---
+
 ## Table of Contents
 
 - [Overview](#overview)
@@ -21,8 +28,9 @@
 ## Overview
 
 This framework provides **robust and maintainable test automation** for e-commerce websites. It leverages
-the [Playwright](https://playwright.dev/) testing library to validate critical functionalities such as **product search
-**, **filtering**, **sorting**, and **user-generated interactions** (like reviews and ratings). Designed to scale with
+the [Playwright](https://playwright.dev/) testing library to validate critical functionalities such as
+**product search**, **filtering**, **sorting**, and **user-generated interactions** (like reviews and ratings). Designed
+to scale with
 growing applications, it ensures high-quality user experiences by catching issues early in the development cycle.
 
 ## Key Features
