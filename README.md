@@ -256,6 +256,14 @@ checks to more in-depth scenarios like user authentication, payment flows, and p
 
 ---
 
+## Test Reports
+
+After running the tests, you can view the **Allure Report** using:
+
+```bash
+npx allure serve allure-results
+```
+
 ## Contributing
 
 Contributions are welcome! Please follow our existing coding conventions and testing standards. If you add or revise
