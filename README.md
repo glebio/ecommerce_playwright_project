@@ -1,7 +1,9 @@
-# E-Commerce Test Automation Framework
+# E-Commerce Test Automation Framework (Playwright/TS)
 
 ![Node.js](https://img.shields.io/badge/node-%3E%3D18-blue)
-![Playwright](https://img.shields.io/badge/playwright-tested-brightgreen)
+![Playwright](https://img.shields.io/badge/playwright-1.50%2B-brightgreen)
+![TypeScript](https://img.shields.io/badge/typescript-%3E%3D4.9-blue)
+![Allure](https://img.shields.io/badge/allure-reporting-orange)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 ---
