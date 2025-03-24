@@ -100,9 +100,9 @@ checks to more in-depth scenarios like user authentication, payment flows, and p
 
 #### 1.1 API/Backend Health Check (if API is available)
 
-- **Healthcheck Endpoint**
+- **Healthcheck Endpoint ✅**
   - Check `/api/healthcheck` (or equivalent) to ensure it returns a 200 status.
-- **Key API Requests**
+- **Key API Requests ✅**
   - Validate `GET /products`, `GET /categories`, `GET /cart` (or other critical endpoints).
   - Confirm JSON structure, response time, and correct status codes.
 
