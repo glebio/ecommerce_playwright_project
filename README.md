@@ -27,9 +27,9 @@ Automated Testing!
 
 ## Overview
 
-This framework provides **robust and maintainable test automation** for e-commerce websites.
-For a real demonstration of how the automated tests work, our team developed a dedicated test website:  
-<a href="https://shop.qaresults.com" target="_blank">shop.qaresults.com</a>  
+This framework provides **robust and maintainable test automation** for e-commerce websites.  
+For a real demonstration of how the automated tests work, our team developed a dedicated test
+website: <a href="https://shop.qaresults.com" target="_blank">shop.qaresults.com</a>&nbsp;   
 It leverages the [Playwright](https://playwright.dev/) testing library to validate critical functionalities such as
 **product search**, **filtering**, **sorting**, and **user-generated interactions** (like reviews and ratings). Designed
 to scale with
