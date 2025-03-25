@@ -30,6 +30,7 @@ Automated Testing!
 This framework provides **robust and maintainable test automation** for e-commerce websites.<br/><br/>
 For a real demonstration of how the automated tests work, our team developed a dedicated test
 website 🚀: <a href="https://shop.qaresults.com" target="_blank">shop.qaresults.com</a>&nbsp;<br/><br/>
+[![Shop Screenshot](https://github.com/user-attachments/assets/ad92704b-a6bb-4779-9b33-24cf3326280f "Click to open test store")](https://shop.qaresults.com)
 It leverages
 the ![Playwright](https://img.shields.io/badge/-Playwright-45ba63?logo=playwright&logoColor=white) [Playwright](https://playwright.dev/)
 testing library
