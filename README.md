@@ -34,10 +34,10 @@ website 🚀: <a href="https://shop.qaresults.com" target="_blank">shop.qaresult
 
 It leverages
 the ![Playwright](https://img.shields.io/badge/-Playwright-45ba63?logo=playwright&logoColor=white) [Playwright](https://playwright.dev/)
-testing library and  
-![TypeScript](https://img.shields.io/badge/-TypeScript-3178c6?logo=typescript&logoColor=white) [TypeScript](https://www.typescriptlang.org/)
-for validating critical functionalities such as  
-**product search**, **filtering**, **sorting**, and **user-generated interactions** (like reviews and ratings).  
+testing library
+and ![TypeScript](https://img.shields.io/badge/-TypeScript-3178c6?logo=typescript&logoColor=white) [TypeScript](https://www.typescriptlang.org/)
+for validating critical functionalities such as **product search**, **filtering**, **sorting**, and **user-generated
+interactions** (like reviews and ratings).  
 Designed to scale with growing applications, it ensures high-quality user experiences by catching issues early in the
 development cycle.
 
