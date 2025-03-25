@@ -1,4 +1,4 @@
-# E-Commerce Test Automation Framework (Playwright/TS)
+# E-Commerce Test Automation Framework (Playwright/TypeScript)
 
 ![Node.js](https://img.shields.io/badge/node-%3E%3D18-blue)
 ![Playwright](https://img.shields.io/badge/playwright-1.50%2B-brightgreen)
@@ -27,8 +27,10 @@ Automated Testing!
 
 ## Overview
 
-This framework provides **robust and maintainable test automation** for e-commerce websites. It leverages
-the [Playwright](https://playwright.dev/) testing library to validate critical functionalities such as
+This framework provides **robust and maintainable test automation** for e-commerce websites.
+For a real demonstration of how the automated tests work, our team developed a dedicated test website:  
+<a href="https://shop.qaresults.com" target="_blank">shop.qaresults.com</a>  
+It leverages the [Playwright](https://playwright.dev/) testing library to validate critical functionalities such as
 **product search**, **filtering**, **sorting**, and **user-generated interactions** (like reviews and ratings). Designed
 to scale with
 growing applications, it ensures high-quality user experiences by catching issues early in the development cycle.
