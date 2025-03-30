@@ -134,7 +134,7 @@ checks to more in-depth scenarios like user authentication, payment flows, and p
   - Check images, text, overall speed, and SEO elements.
 - **Logo Display✅**
   - Confirm the site logo is visible on all key pages and redirects correctly to the home page.
-- **Main Menu (Navigation)**
+- **Main Menu (Navigation)✅**
   - Verify the main menu is visible, with working links (Categories, Account, Cart).
   - Check category links navigate correctly to product listings.
 - **Search Bar Visibility**
