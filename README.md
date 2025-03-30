@@ -134,10 +134,10 @@ checks to more in-depth scenarios like user authentication, payment flows, and p
   - Check images, text, overall speed, and SEO elements.
 - **Logo Display✅**
   - Confirm the site logo is visible on all key pages and redirects correctly to the home page.
-- **Main Menu (Navigation)**
+- **Main Menu (Navigation)✅**
   - Verify the main menu is visible, with working links (Categories, Account, Cart).
   - Check category links navigate correctly to product listings.
-- **Search Bar Visibility**
+- **Search Bar Visibility✅**
   - Ensure the search bar is visible on the home page and throughout the site, with placeholder text.
 - **Hero Image/Banners**
   - Check the homepage hero image or carousel loads and links to correct sections.
