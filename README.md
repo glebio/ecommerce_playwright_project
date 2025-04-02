@@ -113,8 +113,8 @@ checks to more in-depth scenarios like user authentication, payment flows, and p
 
 #### 1.2 Smoke Tests – Status Codes of Key Pages (if no API available)
 
-- **Key Pages**: Home, catalog, product, cart.
-- **Validation**: Perform HTTP requests to confirm each page returns a 200 status.
+- **Key Pages✅**: Home, catalog, product, cart.
+- **Validation✅**: Perform HTTP requests to confirm each page returns a 200 status.
 
 **Summary**:
 
