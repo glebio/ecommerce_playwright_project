@@ -66,7 +66,7 @@ interactions** (like reviews and ratings).
   - Update the `baseURL` property to point to the environment you wish to test. For example:
     ```ts
     use: {
-      baseURL: 'https://shop.qaresults.com',
+      baseURL: 'https://shop.qaresults.com'
     }
     ```
 
@@ -112,13 +112,12 @@ checks to more in-depth scenarios like user authentication, payment flows, and p
 - **Key API Requests** ✅  
   Validate important endpoints such as: `GET /products`, `GET /categories`, `GET /cart`
   Confirm: proper **status codes**, valid **JSON structure**, acceptable **response time**
----
 
 #### 1.2 Page-Level Smoke Checks
 
 - **Public Key Pages** ✅
   Ensure the following key pages are reachable and return `200 OK`: Home, Category/Catalog, Product, Cart
----
+
 #### 🔍 Summary
 
 - If an API exists, begin with **1.1** to verify `/api/healthcheck` returns a `200 OK` response.
