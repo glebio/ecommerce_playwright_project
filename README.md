@@ -110,13 +110,13 @@ checks to more in-depth scenarios like user authentication, payment flows, and p
 - **Healthcheck Endpoint** ✅  
   Check: `GET /api/healthcheck` (or equivalent) to ensure it returns a `200 OK` status.
 - **Key API Requests** ✅  
-  Validate important endpoints such as: `GET /products`, `GET /categories`, `GET /cart`
+  Validate important endpoints such as: `GET /products`, `GET /categories`, `GET /cart`  
   Confirm: proper **status codes**, valid **JSON structure**, acceptable **response time**
 
 #### 1.2 Page-Level Smoke Checks
 
-- **Public Key Pages** ✅
-  Ensure the following key pages are reachable and return `200 OK`: Home, Category/Catalog, Product, Cart
+- **Public Key Pages** ✅  
+  Ensure: the following key pages are reachable and return `200 OK`: Home, Category/Catalog, Product, Cart
 
 #### 🔍 Summary
 
