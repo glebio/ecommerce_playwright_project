@@ -99,6 +99,8 @@ interactions** (like reviews and ratings).
 Below is a comprehensive list of test cases designed for an e-commerce site. These cover everything from basic smoke
 checks to more in-depth scenarios like user authentication, payment flows, and performance testing.
 
+> ✅ – Autotest is ready and implemented.
+
 ---
 
 ### 1. API & Backend Health Checks
@@ -106,38 +108,21 @@ checks to more in-depth scenarios like user authentication, payment flows, and p
 #### 1.1 API/Backend Health Check (if API is available)
 
 - **Healthcheck Endpoint** ✅  
-  Check `/api/healthcheck` (or equivalent) to ensure it returns a `200 OK` status.
+  Check: `GET /api/healthcheck` (or equivalent) to ensure it returns a `200 OK` status.
 - **Key API Requests** ✅  
-  Validate important endpoints such as:
-  - `GET /products`
-  - `GET /categories`
-  - `GET /cart`
-
-  Confirm:
-  - Proper **status codes**
-  - Valid **JSON structure**
-  - Acceptable **response time**
-
+  Validate important endpoints such as: `GET /products`, `GET /categories`, `GET /cart`
+  Confirm: proper **status codes**, valid **JSON structure**, acceptable **response time**
 ---
 
-#### 1.2 Smoke Tests – Status Codes of Key Pages (if no API available)
+#### 1.2 Page-Level Smoke Checks
 
-- **Key Pages** ✅
-  - Home
-  - Catalog
-  - Product
-  - Cart
-
-- **Validation** ✅  
-  Perform HTTP requests to these pages and confirm they return a `200 OK` status.
-
+- **Public Key Pages** ✅
+  Ensure the following key pages are reachable and return `200 OK`: Home, Category/Catalog, Product, Cart
 ---
-
 #### 🔍 Summary
 
 - If an API exists, begin with **1.1** to verify `/api/healthcheck` returns a `200 OK` response.
 - Regardless of API availability, ensure all major pages (home, catalog, product, cart) return a `200 OK` status.
-
 ---
 
 ### 2. Smoke Tests – Critical Elements & Basic Functionality
