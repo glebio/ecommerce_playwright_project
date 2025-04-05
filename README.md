@@ -105,21 +105,38 @@ checks to more in-depth scenarios like user authentication, payment flows, and p
 
 #### 1.1 API/Backend Health Check (if API is available)
 
-- **Healthcheck Endpoint ✅**
-  - Check `/api/healthcheck` (or equivalent) to ensure it returns a 200 status.
-- **Key API Requests ✅**
-  - Validate `GET /products`, `GET /categories`, `GET /cart` (or other critical endpoints).
-  - Confirm JSON structure, response time, and correct status codes.
+- **Healthcheck Endpoint** ✅  
+  Check `/api/healthcheck` (or equivalent) to ensure it returns a `200 OK` status.
+- **Key API Requests** ✅  
+  Validate important endpoints such as:
+  - `GET /products`
+  - `GET /categories`
+  - `GET /cart`
+
+  Confirm:
+  - Proper **status codes**
+  - Valid **JSON structure**
+  - Acceptable **response time**
+
+---
 
 #### 1.2 Smoke Tests – Status Codes of Key Pages (if no API available)
 
-- **Key Pages✅**: Home, catalog, product, cart.
-- **Validation✅**: Perform HTTP requests to confirm each page returns a 200 status.
+- **Key Pages** ✅
+  - Home
+  - Catalog
+  - Product
+  - Cart
 
-**Summary**:
+- **Validation** ✅  
+  Perform HTTP requests to these pages and confirm they return a `200 OK` status.
 
-- If an API exists, check 1.1 first (ensure healthcheck is 200).
-- Whether an API exists or not, confirm the main pages (home, catalog, product, cart) return a 200 status.
+---
+
+#### 🔍 Summary
+
+- If an API exists, begin with **1.1** to verify `/api/healthcheck` returns a `200 OK` response.
+- Regardless of API availability, ensure all major pages (home, catalog, product, cart) return a `200 OK` status.
 
 ---
 
