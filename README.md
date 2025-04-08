@@ -27,16 +27,16 @@ Automated Testing!
 
 ## Overview
 
-This framework provides **robust and maintainable test automation** for e-commerce websites.<br/><br/>
+This **Test Framework** provides robust and maintainable test automation for **E-commerce websites**.<br/><br/>
 For a real demonstration of how the automated tests work, our team developed a dedicated test
 website 🚀: <a href="https://shop.qaresults.com" target="_blank">shop.qaresults.com</a>&nbsp;<br/><br/>
 [![Shop Screenshot](https://github.com/user-attachments/assets/ad92704b-a6bb-4779-9b33-24cf3326280f "Click to open test store")](https://shop.qaresults.com)<br/><br/>
-It leverages
+Test Framework leverages
 the ![Playwright](https://img.shields.io/badge/-Playwright-45ba63?logo=playwright&logoColor=white) [Playwright](https://playwright.dev/)
 testing library
 and ![TypeScript](https://img.shields.io/badge/-TypeScript-3178c6?logo=typescript&logoColor=white) [TypeScript](https://www.typescriptlang.org/)
-for validating critical functionalities such as **product search**, **filtering**, **sorting**, and **user-generated
-interactions** (like reviews and ratings).
+for validating critical functionalities such as **product search**, **filtering**, **sorting**, **user-generated
+interactions** (like reviews and ratings) ond others.
 
 ## Key Features
 
@@ -96,7 +96,7 @@ interactions** (like reviews and ratings).
 
 ## Test Coverage: Detailed List of Test Cases
 
-Below is a comprehensive list of test cases designed for an e-commerce site. These cover everything from basic smoke
+Below is a comprehensive list of test cases designed for an E-commerce site. These cover everything from basic smoke
 checks to more in-depth scenarios like user authentication, payment flows, and performance testing.
 
 > ✅ – Autotest is ready and implemented.
@@ -130,25 +130,25 @@ checks to more in-depth scenarios like user authentication, payment flows, and p
 
 **Purpose**: Verify that critical elements and basic website functionality operate correctly.
 
-- **Page Load** ✅
+- **Page Load**
   - Ensure home page, category pages, and product pages load without errors.
   - Check images, text, overall speed, and SEO elements.
-- **Logo Display** ✅
+- **Logo Display**
   - Confirm the site logo is visible on all key pages and redirects correctly to the home page.
-- **Main Menu (Navigation)** ✅
+- **Main Menu (Navigation)**
   - Verify the main menu is visible, with working links (Categories, Account, Cart).
   - Check category links navigate correctly to product listings.
-- **Search Bar Visibility** ✅
+- **Search Bar Visibility**
   - Ensure the search bar is visible on the home page and throughout the site, with placeholder text.
-- **Hero Image/Banners** ✅
+- **Hero Image/Banners**
   - Check the homepage hero image or carousel loads and links to correct sections.
-- **Promotional Banners/Pop-ups** ✅
+- **Promotional Banners/Pop-ups**
   - Confirm any discount or newsletter pop-ups appear as expected and can be dismissed.
 - **Cart Icon**
   - Verify the cart icon is visible and update the item count when products are added.
 - **Sign In/Sign Up**
   - Confirm sign-in/sign-up buttons work and lead to the correct pages.
-- **Breadcrumbs**
+- **Breadcrumbs** ✅
   - Ensure breadcrumbs on category/product pages reflect the correct navigation path.
 - **Footer & Social Links**
   - Check footer links (contact, policies) and social icons direct to valid pages.
