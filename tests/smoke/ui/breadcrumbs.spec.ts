@@ -43,22 +43,24 @@ test.describe('Breadcrumbs Verification @smoke', () => {
     test('Verify breadcrumbs are visible on product page and reflect correct navigation path', async ({page}) => {
         await page.goto(PRODUCT_PAGE);
 
-        // Verify breadcrumbs are visible
+        // Step 1: Verify breadcrumbs container is visible
         const breadcrumbs = page.locator(selectors.breadcrumbs.container);
         await expect(breadcrumbs).toBeVisible();
         console.log('✅ Breadcrumbs are visible on the product page.');
 
-        // Verify breadcrumb structure
+        // Step 2: Get breadcrumb items and ensure valid structure
         const breadcrumbItems = breadcrumbs.locator(selectors.breadcrumbs.items);
-        await breadcrumbItems.first().waitFor({state: 'visible'});
         const breadcrumbCount = await breadcrumbItems.count();
         expect(breadcrumbCount).toBeGreaterThan(1);
         console.log(`✅ Breadcrumbs contain ${breadcrumbCount} elements, confirming navigation path.`);
 
-        // Click on the category breadcrumb and verify navigation
-        const categoryBreadcrumb = breadcrumbItems.nth(1).locator(selectors.breadcrumbs.links);
+        // Step 3: Find the second breadcrumb (usually category) and click it
+        const categoryBreadcrumb = breadcrumbItems.nth(2).locator('a');
+        await expect(categoryBreadcrumb).toBeVisible();
         await categoryBreadcrumb.click();
-        await page.waitForURL(CATEGORY_PAGE, {timeout: 5000}); // Wait for navigation with a timeout
+
+        // Step 4: Verify navigation to category page
+        await page.waitForURL(CATEGORY_PAGE, {timeout: 5000});
         await expect(page).toHaveURL(CATEGORY_PAGE);
         console.log('✅ Clicking category breadcrumb navigates correctly.');
     });
