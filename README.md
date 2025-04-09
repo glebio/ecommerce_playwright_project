@@ -146,7 +146,7 @@ checks to more in-depth scenarios like user authentication, payment flows, and p
   - Confirm any discount or newsletter pop-ups appear as expected and can be dismissed.
 - **Cart Icon**
   - Verify the cart icon is visible and update the item count when products are added.
-- **Sign In/Sign Up**
+- **Sign In/Sign Up** ✅
   - Confirm sign-in/sign-up buttons work and lead to the correct pages.
 - **Breadcrumbs** ✅
   - Ensure breadcrumbs on category/product pages reflect the correct navigation path.
