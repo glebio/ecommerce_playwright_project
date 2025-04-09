@@ -98,11 +98,22 @@ export const selectors = {
     },
 
     loginPage: {
-        loginForm: '#login-form',
+        loginForm: 'form[action*="/login"]',
+        emailField: 'input[id="input-email"]',
+        passwordField: 'input[type="password"]',
+        submitButton: 'input[type="submit"]',
     },
 
     registerPage: {
-        registerForm: '#register-form',
+        registerForm: 'form[action*="/register"]',
+        firstNameField: '#input-firstname',
+        lastNameField: '#input-lastname',
+        emailField: '#input-email',
+        telephoneField: '#input-telephone',
+        passwordField: '#input-password',
+        confirmPasswordField: '#input-confirm',
+        submitButton: 'input[value="Continue"]',
+        privacyCheckbox: 'input[name="agree"]'
     },
 
     filtersPage: {
