@@ -92,7 +92,8 @@ interactions** (like reviews and ratings) ond others.
 - **Playwright** (installed via `npm install`)
 - Other dependencies found in `package.json`
 
----
+## Project Structure
+
 <details>
 <summary><strong>Project Structure (Click to Expand)</strong></summary>
 
