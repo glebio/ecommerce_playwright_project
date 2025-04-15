@@ -20,6 +20,7 @@ Automated Testing!
 - [Installation](#installation)
 - [Usage](#usage)
 - [Requirements](#requirements)
+- [Project Structure](#project-structure)
 - [Test Coverage: Detailed List of Test Cases](#test-coverage-detailed-list-of-test-cases)
 - [Test Reports](#test-reports)
 - [Contributing](#contributing)
@@ -127,7 +128,6 @@ ecommerce-playwright-project
 ```
 
 </details>
----
 
 ## Test Coverage: Detailed List of Test Cases
 
