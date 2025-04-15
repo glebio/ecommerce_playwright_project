@@ -20,6 +20,7 @@ Automated Testing!
 - [Installation](#installation)
 - [Usage](#usage)
 - [Requirements](#requirements)
+- [Project Structure](#project-structure)
 - [Test Coverage: Detailed List of Test Cases](#test-coverage-detailed-list-of-test-cases)
 - [Test Reports](#test-reports)
 - [Contributing](#contributing)
@@ -92,7 +93,41 @@ interactions** (like reviews and ratings) ond others.
 - **Playwright** (installed via `npm install`)
 - Other dependencies found in `package.json`
 
----
+## Project Structure
+
+<details>
+<summary><strong>Project Structure (Click to Expand)</strong></summary>
+
+```
+ecommerce-playwright-project
+├── node_modules/                 # Installed dependencies
+├── .gitignore                    # Ignored files/patterns
+├── package.json                  # NPM package config
+├── package-lock.json             # NPM lock file
+├── playwright.config.ts          # Main Playwright configuration
+├── tsconfig.json                 # TypeScript configuration
+├── README.md                     # Project overview & usage docs
+├── config.json                   # Optional extra config data
+├── tests/                        # Test specs (organized by feature or folder)
+│   ├── smoke/
+│   │   ├── main-menu-navigation.spec.ts
+│   │   ├── category-products.spec.ts
+│   │   └── ...
+│   └── regression/
+│       ├── ...
+│       └── ...
+├── pageObjects/                  # Page Object Model classes
+│   ├── HomePage.ts
+│   ├── ProductPage.ts
+│   └── ...
+├── selectors/                    # Centralized selectors or locator definitions
+│   └── selectors.ts
+├── utils/                        # Reusable helpers (e.g., cartActions, mocks)
+│   └── cartActions.ts
+└── allure-results/               # (Optional) Allure output
+```
+
+</details>
 
 ## Test Coverage: Detailed List of Test Cases
 
