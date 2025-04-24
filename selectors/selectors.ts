@@ -122,11 +122,11 @@ export const selectors = {
         filterDropdown: (filterName: string) => `div.filter-dropdown[data-filter="${filterName}"]`,
         productItem: 'h4[class="product-name"]',
         sortingDropdown: 'select#input-sort',
-        sortingOption: (sortBy: string, order: string) => `select#input-sort option[value*="sort=${sortBy}&order=${order}"]`,
-        filterOption: (filterName: string, filterOption: string) =>
-            `div[data-filter="${filterName}"] input[value="${filterOption}"]`,
-        getFilterBlock: (filterName: string) =>
-            `div.list-group-item.ocfilter-option:has-text("${filterName}")`,
+        // sortingOption: (sortBy: string, order: string) => `select#input-sort option[value*="sort=${sortBy}&order=${order}"]`,
+        // filterOption: (filterName: string, filterOption: string) =>
+        //     `div[data-filter="${filterName}"] input[value="${filterOption}"]`,
+        // getFilterBlock: (filterName: string) =>
+        //     `div.list-group-item.ocfilter-option:has-text("${filterName}")`,
         getFilterOption: (filterName: string, filterOption: string) =>
             `div.list-group-item.ocfilter-option:has-text("${filterName}") .ocf-option-values label:has-text("${filterOption}")`,
         showProductsPopup: 'div.popover-content > button.btn.btn-primary:not(.disabled):has-text("Show")',
