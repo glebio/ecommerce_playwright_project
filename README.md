@@ -173,9 +173,9 @@ checks to more in-depth scenarios like user authentication, payment flows, and p
 - **Main Menu (Navigation)** ✅
   - Verify the main menu is visible, with working links (Categories, Account, Cart).
   - Check category links navigate correctly to product listings.
-- **Search Bar Visibility**
+- **Search Bar Visibility** ✅
   - Ensure the search bar is visible on the home page and throughout the site, with placeholder text.
-- **Hero Image/Banners**
+- **Hero Image/Banners** ✅
   - Check the homepage hero image or carousel loads and links to correct sections.
 - **Promotional Banners/Pop-ups**
   - Confirm any discount or newsletter pop-ups appear as expected and can be dismissed.
