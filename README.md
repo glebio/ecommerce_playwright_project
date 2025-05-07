@@ -185,9 +185,9 @@ checks to more in-depth scenarios like user authentication, payment flows, and p
   - Confirm sign-in/sign-up buttons work and lead to the correct pages.
 - **Breadcrumbs** ✅
   - Ensure breadcrumbs on category/product pages reflect the correct navigation path.
-- **Footer & Social Links**
+- **Footer & Social Links** ✅
   - Check footer links (contact, policies) and social icons direct to valid pages.
-- **Error Messages & Loaders**
+- **Error Messages & Loaders** ✅
   - Validate 404 pages, error messages, and loading spinners are displayed and styled correctly.
 
 #### 2.2 Basic Functional Tests (Core Store Functions)
