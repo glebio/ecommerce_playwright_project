@@ -1,53 +1,60 @@
 import {test, expect} from '@playwright/test';
 import config from '../../../playwright.config';
+import {selectors} from '../../../selectors/selectors';
 
-test.describe('Main Menu Navigation @smoke', () => {
-    // Extract base URL from configuration
+test.describe('Category Navigation @smoke', () => {
+    // Extract base URL from Playwright configuration
     const baseURL = config.use?.baseURL || '';
     if (!baseURL) {
         throw new Error('Base URL is not defined in Playwright configuration.');
     }
 
-    test('Verify the home page contains a list of categories that lead to product listing pages', async ({page}) => {
+    test('Verify home page has categories leading to product listings', async ({page}) => {
         // Navigate to the home page
         await page.goto(baseURL);
 
-        // Verify the main menu is visible
-        const mainMenu = page.locator('nav.main-menu'); // Adjust the selector based on your menu structure
-        await expect(mainMenu).toBeVisible({timeout: 5000});
+        // Verify the main menu container is visible
+        await expect(page.locator(selectors.homePage.menuContainer)).toBeVisible();
 
-        // Get the list of category links in the main menu
-        const categoryLinks = mainMenu.locator('a.category-link'); // Adjust selector to match category links
-        const categoryCount = await categoryLinks.count();
+        // Get all menu items in the vertical menu
+        const menuItems = page.locator(selectors.homePage.menuItems);
+        const itemCount = await menuItems.count();
+        expect(itemCount).toBeGreaterThan(0);
 
-        // Ensure there are categories listed
-        expect(categoryCount).toBeGreaterThan(0);
+        for (let i = 0; i < itemCount; i++) {
+            // Select the current menu item
+            const item = menuItems.nth(i);
+            const name = (await item.innerText()).trim();
+            console.log(`Navigating to category: ${name}`);
 
-        // Verify each category link leads to a product listing page
-        for (let i = 0; i < categoryCount; i++) {
-            const category = categoryLinks.nth(i);
-            const categoryName = await category.innerText();
-            console.log(`Navigating to category: ${categoryName}`);
-
-            // Click the category link and wait for navigation
+            // Click the link inside the menu item and wait for navigation
             await Promise.all([
                 page.waitForNavigation({timeout: 5000}),
-                category.click(),
+                item.locator('a').click(),
             ]);
 
-            // Ensure the URL matches a product listing page pattern
-            await expect(page).toHaveURL(new RegExp(`${baseURL}/category/|${baseURL}/products/|${baseURL}/shop/`), {timeout: 5000});
+            // Verify that the URL matches a product-listing pattern
+            await expect(
+                page,
+                `URL did not match product-list pattern after clicking "${name}"`
+            ).toHaveURL(
+                new RegExp(`${baseURL}/(category|products|shop)/`),
+                {timeout: 5000}
+            );
 
-            // Verify the page has a product list
-            const productList = page.locator('.product-list'); // Adjust selector for product list container
+            // Verify the product list is visible
+            const productList = page.locator('.product-list');
             await expect(productList).toBeVisible({timeout: 5000});
 
-            // Ensure there are products in the list
-            const productItems = productList.locator('.product-item'); // Adjust selector for individual product items
+            // Ensure there's at least one product in the list
+            const productItems = productList.locator('.product-item');
             const productCount = await productItems.count();
-            expect(productCount).toBeGreaterThan(0);
+            expect(
+                productCount,
+                `No products found in category "${name}"`
+            ).toBeGreaterThan(0);
 
-            // Return to the home page
+            // Return to the home page for the next category
             await page.goto(baseURL);
         }
     });

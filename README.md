@@ -165,14 +165,17 @@ checks to more in-depth scenarios like user authentication, payment flows, and p
 
 **Purpose**: Verify that critical elements and basic website functionality operate correctly.
 
-- **Page Load** ✅
+- **Page Load**
   - Ensure home page, category pages, and product pages load without errors.
   - Check images, text, overall speed, and SEO elements.
 - **Logo Display** ✅
   - Confirm the site logo is visible on all key pages and redirects correctly to the home page.
-- **Main Menu (Navigation)** ✅
+- **Main Menu Navigation** ✅
   - Verify the main menu is visible, with working links (Categories, Account, Cart).
   - Check category links navigate correctly to product listings.
+- **Category Navigation** ✅
+  - Verify that each category link in the main menu leads to its product listing page.
+  - Ensure the listing page shows a visible product list with at least one item.
 - **Search Bar Visibility** ✅
   - Ensure the search bar is visible on the home page and throughout the site, with placeholder text.
 - **Hero Image/Banners** ✅
