@@ -9,6 +9,11 @@ export const selectors = {
         browseCategoriesButton: 'div[class="oc-menu-bar"]',
         categoryLink: (categoryName: string) => `a:has-text("${categoryName}")`,
         subCategoryLink: (subCategoryName: string) => `a:has-text("${subCategoryName}")`,
+        menuContainer: 'div.vertical-menu .ul-top-items',
+        menuItems: 'div.vertical-menu .ul-top-items li.li-top-item',
+        menuItemByText: (text: string) =>
+            `div.vertical-menu .ul-top-items li.li-top-item:has-text("${text}")`,
+        menuLinks: 'div.vertical-menu .ul-top-items li.li-top-item a',
     },
 
     productPage: {
