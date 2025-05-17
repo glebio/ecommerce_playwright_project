@@ -165,7 +165,7 @@ checks to more in-depth scenarios like user authentication, payment flows, and p
 
 **Purpose**: Verify that critical elements and basic website functionality operate correctly.
 
-- **Page Load**
+- **Page Load** ✅
   - Ensure home page, category pages, and product pages load without errors.
   - Check images, text, overall speed, and SEO elements.
 - **Logo Display** ✅
@@ -182,7 +182,7 @@ checks to more in-depth scenarios like user authentication, payment flows, and p
   - Check the homepage hero image or carousel loads and links to correct sections.
 - **Promotional Banners/Pop-ups** ✅
   - Confirm any discount or newsletter pop-ups appear as expected and can be dismissed.
-- **Cart Icon**
+- **Cart Icon** ✅
   - Verify the cart icon is visible and update the item count when products are added.
 - **Sign In/Sign Up** ✅
   - Confirm sign-in/sign-up buttons work and lead to the correct pages.
@@ -195,9 +195,9 @@ checks to more in-depth scenarios like user authentication, payment flows, and p
 
 #### 2.2 Basic Functional Tests (Core Store Functions)
 
-- **Add to Cart Button**
+- **Add to Cart Button** ✅
   - Check items can be added to the cart from product listing and detail pages.
-- **Cart Icon**
+- **Cart Icon** ✅
   - Clicking the cart icon opens the cart page.
 - **Checkout Access**
   - From the cart, ensure users can proceed to checkout.
