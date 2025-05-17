@@ -291,7 +291,7 @@ checks to more in-depth scenarios like user authentication, payment flows, and p
 
 - **Contact Forms**
   - Check form submission for support requests; validate success message or email.
-- **FAQ & Help Pages**
+- **FAQ & Help Pages** ✅
   - Ensure they load correctly and cover key questions.
 - **Live Chat (if applicable)**
   - Validate that chat is available and responsive.
