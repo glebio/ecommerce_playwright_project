@@ -229,7 +229,7 @@ checks to more in-depth scenarios like user authentication, payment flows, and p
 
 **Purpose**: Validate additional site features and edge cases beyond the critical purchase path.
 
-- **Filtering & Sorting**
+- **Filtering & Sorting** ✅
   - Verify filtering by categories, price, availability, plus sorting by price, rating, popularity.
 - **Advanced Search**
   - Check accurate search results based on keywords or filters.
@@ -237,7 +237,7 @@ checks to more in-depth scenarios like user authentication, payment flows, and p
   - Ensure “Related Products” or “You May Also Like” sections display relevant items.
 - **Promo Codes & Discounts**
   - Test applying promo codes and validating discount calculations.
-- **Out-of-Stock Notifications**
+- **Out-of-Stock Notifications**  ✅
   - Confirm users can sign up for notifications on out-of-stock products.
 - **Review & Rating Display**
   - Check product reviews/ratings are visible and correctly aggregated.
