@@ -4,11 +4,11 @@ export default defineConfig({
     testDir: './tests',
     fullyParallel: false,
     use: {
-        headless: false,
+        headless: !!process.env.CI,
         launchOptions: {
             args: ['--window-size=1920,1080'],
         },
-        baseURL: 'https://shop.qaresults.com',
+        baseURL: process.env.BASE_URL ?? 'https://shop.qaresults.com',
         trace: 'on-first-retry',
         navigationTimeout: 30000,
     },
