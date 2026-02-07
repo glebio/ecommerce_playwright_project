@@ -2,7 +2,12 @@
   "name": "ecommerce_playwright_project",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "playwright test",
+    "test:ci-smoke": "playwright test -g \"@ci-smoke\"",
+    "typecheck": "tsc --noEmit",
+    "report": "playwright show-report"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
