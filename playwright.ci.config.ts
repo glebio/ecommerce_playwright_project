@@ -12,5 +12,8 @@ export default defineConfig({
     projects: [
         {name: 'chromium', use: {browserName: 'chromium', viewport: null}},
     ],
-    reporter: [['allure-playwright']],
+    reporter: [
+        ['html', {open: 'never'}],
+        ['allure-playwright']
+    ],
 });
