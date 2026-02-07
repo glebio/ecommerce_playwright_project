@@ -19,13 +19,10 @@ jobs:
           cache: "npm"
 
       - run: npm ci
-
       - run: npx playwright install --with-deps
 
       - name: Run tests
-        env:
-          BASE_URL: ${{ secrets.BASE_URL }}
-        run: npx playwright test
+        run: npm run test:ci-smoke
 
       - name: Upload Playwright HTML report
         if: always()

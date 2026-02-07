@@ -17,15 +17,25 @@ export default defineConfig({
         : [
             ['allure-playwright'],
         ],
-    projects: [
-        {
-            name: 'Google Chrome',
-            use: {
-                channel: 'chrome',
-                viewport: null,
+    projects: process.env.CI
+        ? [
+            {
+                name: 'chromium',
+                use: {
+                    browserName: 'chromium',
+                    viewport: null,
+                },
             },
-        },
-    ],
+        ]
+        : [
+            {
+                name: 'Google Chrome',
+                use: {
+                    channel: 'chrome',
+                    viewport: null,
+                },
+            },
+        ],
     metadata: {
         tags: ['smoke'],
     },
