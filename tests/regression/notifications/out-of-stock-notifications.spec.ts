@@ -9,7 +9,7 @@ test.describe('Out-of-Stock Notifications @regression', () => {
         throw new Error('Base URL is not defined in Playwright configuration.');
     }
 
-    const OUT_OF_STOCK_PRODUCT_URL = `${BASE_URL}/out-of-stock-product`; // Замените на реальный URL товара, который отсутствует в наличии
+    const OUT_OF_STOCK_PRODUCT_URL = `${BASE_URL}/out-of-stock-product`;
 
     test.beforeEach(async ({page}) => {
         await page.goto(OUT_OF_STOCK_PRODUCT_URL);
@@ -18,7 +18,7 @@ test.describe('Out-of-Stock Notifications @regression', () => {
     test('Verify "Out of Stock" message is displayed', async ({page}) => {
         const outOfStockMessage = page.locator(selectors.productPage.outOfStockMessage);
         await expect(outOfStockMessage).toBeVisible();
-        await expect(outOfStockMessage).toContainText('Out of Stock'); // Убедитесь, что сообщение соответствует тексту на сайте
+        await expect(outOfStockMessage).toContainText('Out of Stock');
         console.log('✅ "Out of Stock" message is correctly displayed.');
     });
 
