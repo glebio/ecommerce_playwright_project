@@ -95,39 +95,74 @@ interactions** (like reviews and ratings) ond others.
 
 ## Project Structure
 
-<details>
-<summary><strong>Project Structure (Click to Expand)</strong></summary>
+```text
+📦 ecommerce-playwright-framework
+ ┃
+ ┣━━ 📂 .github/workflows/             # 🐙 GitHub Actions (primary CI)
+ ┃   ┗━━ 📄 e2e.yml                    # Jobs: install → test → upload artifacts
+ ┣━━ 📄 .gitlab-ci.yml                 # 🦊 (optional) GitLab CI entrypoint (if GitLab is used)
+ ┣━━ 📄 Jenkinsfile                    # 👷 (optional) Jenkins pipeline (if Jenkins is used)
+ ┃
+ ┣━━ 📂 tests/                         # 🧪 Test layer (spec files only)
+ ┃   ┣━━ 📂 setup/                     # 🛠 Global setup & preconditions
+ ┃   ┃   ┗━━ 📄 auth.setup.ts          # One-time login → saves storageState
+ ┃   ┣━━ 📂 smoke/                     # ⚡ Smoke suite (fast PR gate)
+ ┃   ┃   ┣━━ 📄 search.spec.ts
+ ┃   ┃   ┗━━ 📄 checkout-light.spec.ts
+ ┃   ┣━━ 📂 regression/                # 🐢 Full regression (grouped by modules)
+ ┃   ┃   ┣━━ 📂 catalog/               # Filters, sorting, search
+ ┃   ┃   ┣━━ 📂 cart/                  # Promos, taxes, item removal
+ ┃   ┃   ┗━━ 📂 user-profile/          # Account, password change
+ ┃   ┗━━ 📂 api/                       # 🔌 (optional) API tests (contract/integration)
+ ┃
+ ┣━━ 📂 src/                           # 🧠 Framework layer (reusable code)
+ ┃   ┣━━ 📂 app/                       # ⚙️ Framework entry point
+ ┃   ┃   ┣━━ 📄 test.ts                # Custom test() + fixtures (single import point)
+ ┃   ┃   ┗━━ 📄 config.ts              # Env validation (URL, creds, flags)
+ ┃   ┃
+ ┃   ┣━━ 📂 pages/                     # 📑 Pages (locators + simple actions)
+ ┃   ┃   ┣━━ 📄 base.page.ts           # Navigation helpers, waits, common actions
+ ┃   ┃   ┣━━ 📄 home.page.ts
+ ┃   ┃   ┣━━ 📄 plp.page.ts
+ ┃   ┃   ┣━━ 📄 pdp.page.ts
+ ┃   ┃   ┗━━ 📄 cart.page.ts
+ ┃   ┃
+ ┃   ┣━━ 📂 components/                # 🧩 Reusable UI components
+ ┃   ┃   ┣━━ 📄 header.component.ts
+ ┃   ┃   ┗━━ 📄 footer.component.ts
+ ┃   ┃
+ ┃   ┣━━ 📂 flows/                     # 🚦 Business flows (workflows/steps)
+ ┃   ┃   ┣━━ 📄 search.flow.ts
+ ┃   ┃   ┗━━ 📄 checkout.flow.ts
+ ┃   ┃
+ ┃   ┣━━ 📂 selectors/                 # 🏷️ Centralized TestIDs/locators
+ ┃   ┃   ┗━━ 📄 testids.ts
+ ┃   ┃
+ ┃   ┣━━ 📂 data/                      # 💾 Test data (constants/fixtures)
+ ┃   ┃   ┣━━ 📄 test-users.ts
+ ┃   ┃   ┗━━ 📄 test-products.ts
+ ┃   ┃
+ ┃   ┣━━ 📂 utils/                     # 🔨 Utilities/helpers
+ ┃   ┃   ┣━━ 📄 api-client.ts
+ ┃   ┃   ┗━━ 📄 logger.ts
+ ┃   ┃
+ ┃   └── 📂 types/                     # 🧾 (optional) Shared TS types/interfaces
+ ┃       └── 📄 index.ts
+ ┃
+ ┣━━ 📄 playwright.config.ts           # 🛠 Playwright global configuration
+ ┣━━ 📄 package.json                   # 📦 Dependencies + run scripts
+ ┣━━ 📄 package-lock.json              # 🔒 Locked dependency versions
+ ┣━━ 📄 tsconfig.json                  # 📘 TypeScript config (path aliases, etc.)
+ ┣━━ 📄 .gitignore                     # 🚫 Ignored files/patterns
+ ┣━━ 📄 README.md                      # 📄 Project documentation
+ ┣━━ 📄 .env.example                   # 📝 Environment variables template (safe to commit)
+ ┣━━ 📄 .env                           # 🔐 Local secrets (gitignored, NOT committed)
+ ┃
+ ┣━━ 📂 test-results/                  # (generated) Traces/screenshots/videos on failures
+ ┣━━ 📂 playwright-report/             # (generated) Playwright HTML report
+ ┗━━ 📂 allure-results/                # (optional, generated) Allure output (if enabled)
 
 ```
-ecommerce-playwright-project
-├── node_modules/                 # Installed dependencies
-├── .gitignore                    # Ignored files/patterns
-├── package.json                  # NPM package config
-├── package-lock.json             # NPM lock file
-├── playwright.config.ts          # Main Playwright configuration
-├── tsconfig.json                 # TypeScript configuration
-├── README.md                     # Project overview & usage docs
-├── config.json                   # Optional extra config data
-├── tests/                        # Test specs (organized by feature or folder)
-│   ├── smoke/
-│   │   ├── main-menu-navigation.spec.ts
-│   │   ├── category-products.spec.ts
-│   │   └── ...
-│   └── regression/
-│       ├── ...
-│       └── ...
-├── pageObjects/                  # Page Object Model classes
-│   ├── HomePage.ts
-│   ├── ProductPage.ts
-│   └── ...
-├── selectors/                    # Centralized selectors or locator definitions
-│   └── selectors.ts
-├── utils/                        # Reusable helpers (e.g., cartActions, mocks)
-│   └── cartActions.ts
-└── allure-results/               # (Optional) Allure output
-```
-
-</details>
 
 ## Test Coverage: Detailed List of Test Cases
 
