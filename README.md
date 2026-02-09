@@ -21,6 +21,7 @@ Automated Testing!
 - [Usage](#usage)
 - [Requirements](#requirements)
 - [Project Structure](#project-structure)
+- [Development Standards and Best Practices](#development-standards-and-best-practices)
 - [Test Coverage: Detailed List of Test Cases](#test-coverage-detailed-list-of-test-cases)
 - [Test Reports](#test-reports)
 - [Contributing](#contributing)
@@ -163,6 +164,40 @@ interactions** (like reviews and ratings) ond others.
  ┗━━ 📂 allure-results/                # (optional, generated) Allure output (if enabled)
 
 ```
+
+## Development Standards and Best Practices
+
+To keep the project stable, readable, and easy to scale, we follow these standards.
+
+### 1) Branch Naming Strategy
+
+**Format:** `[type]/[project-prefix]-[task-id]-[short-description]`
+
+- **feature/** — new functionality (new flows, pages, fixtures, tests)
+- **fix/** — bug fixes, locator updates, flaky test stabilization
+- **chore/** — dependencies, tooling, configs, refactoring (no behavior change)
+- **docs/** — documentation updates
+
+**Example:** `feature/EPP-107-add-cart-page`
+
+### 2) Commit Messages (Conventional Style)
+
+Use short, descriptive commits:
+
+- `feat: add cart page and flow`
+- `fix: stabilize search locator on home page`
+- `chore: update Playwright version`
+- `docs: update README with project structure`
+
+### 3) Automation Principles
+
+- **Stable Locators First:** Prefer `data-testid` and Playwright `getByRole()` over CSS/XPath.
+- **No Explicit Waits:** Avoid `page.waitForTimeout()`. Use web-first assertions (`expect(...)`) and built-in
+  auto-waiting.
+- **No Hardcoded Selectors in Tests:** Tests should use the `pages/` and `components/` layer (avoid raw selector strings
+  in spec files).
+- **Test Independence:** Each test should run in isolation and in any order (no shared mutable state).
+- **CI Debuggability:** On failure, CI should publish artifacts (HTML report + trace/screenshot/video, if enabled).
 
 ## Test Coverage: Detailed List of Test Cases
 
