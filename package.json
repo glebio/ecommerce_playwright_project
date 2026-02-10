@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "playwright test",
-    "test:ci-smoke": "playwright test -c playwright.ci.config.ts",
+    "test:ci-smoke": "playwright test tests/smoke --grep @ci-smoke",
     "typecheck": "tsc --noEmit",
     "report": "playwright show-report"
   },
