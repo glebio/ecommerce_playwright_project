@@ -1,5 +1,5 @@
 import {test, expect} from '@playwright/test';
-import {HomePage} from '../../../pageObjects/HomePage';
+import {HomePage} from '../../../src/pages/HomePage';
 import {faker} from '@faker-js/faker';
 
 interface UserData {

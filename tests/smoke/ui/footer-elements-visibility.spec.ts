@@ -1,6 +1,6 @@
 import {test, expect} from '@playwright/test';
 import config from '../../../playwright.config';
-import {selectors} from '../../../selectors/selectors';
+import {selectors} from '../../../src/selectors/selectors';
 
 // Feature: Footer Elements Verification
 // This test suite ensures that essential footer elements (e.g., copyright, company details, and payment method icons) are present, visible, and styled correctly.

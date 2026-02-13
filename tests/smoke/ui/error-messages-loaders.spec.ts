@@ -1,6 +1,6 @@
 import {test, expect} from '@playwright/test';
 import config from '../../../playwright.config';
-import {selectors} from '../../../selectors/selectors';
+import {selectors} from '../../../src/selectors/selectors';
 
 // Feature: Error Messages and Loaders Verification
 // Ensures proper display of error messages and loaders for invalid links and slow-loading pages

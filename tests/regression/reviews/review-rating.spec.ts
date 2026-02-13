@@ -1,8 +1,8 @@
 import {expect, test} from '@playwright/test';
-import {HomePage} from '../../../pageObjects/HomePage';
-import {ProductPage} from '../../../pageObjects/ProductPage';
-import {ReviewPage} from '../../../pageObjects/ReviewPage';
-import {AdminPage} from '../../../pageObjects/AdminPage';
+import {HomePage} from '../../../src/pages/HomePage';
+import {ProductPage} from '../../../src/pages/ProductPage';
+import {ReviewPage} from '../../../src/pages/ReviewPage';
+import {AdminPage} from '../../../src/pages/AdminPage';
 
 test.describe('Product Review Submission and Approval @regression', () => {
 

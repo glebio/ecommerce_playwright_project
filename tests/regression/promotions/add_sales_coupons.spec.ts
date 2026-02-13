@@ -1,8 +1,8 @@
 import {test, expect} from '@playwright/test';
-import {HomePage} from '../../../pageObjects/HomePage';
-import {ProductPage} from '../../../pageObjects/ProductPage';
-import {searchAndAddProductToCart} from '../../../utils/cartActions';
-import {selectors} from '../../../selectors/selectors';
+import {HomePage} from '../../../src/pages/HomePage';
+import {ProductPage} from '../../../src/pages/ProductPage';
+import {searchAndAddProductToCart} from '../../../src/utils/cartActions';
+import {selectors} from '../../../src/selectors/selectors';
 
 test.describe('Cart and Coupon Functionality @regression', () => {
 

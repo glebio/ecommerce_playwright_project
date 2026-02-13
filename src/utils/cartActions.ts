@@ -1,5 +1,5 @@
-import {HomePage} from '../pageObjects/HomePage';
-import {ProductPage} from '../pageObjects/ProductPage';
+import {HomePage} from '../pages/HomePage';
+import {ProductPage} from '../pages/ProductPage';
 
 export const searchAndAddProductToCart = async (homePage: HomePage, productPage: ProductPage, productName: string) => {
     await homePage.navigateTo('/');

@@ -1,6 +1,6 @@
 import {expect, Page} from '@playwright/test';
 import {selectors} from '../selectors/selectors';
-import config from '../playwright.config';
+import config from '../../playwright.config';
 
 export class FiltersPage {
     constructor(private page: Page) {

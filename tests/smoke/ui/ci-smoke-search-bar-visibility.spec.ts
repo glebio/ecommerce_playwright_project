@@ -1,5 +1,5 @@
 import {test, expect} from '@playwright/test';
-import {selectors} from '../../../selectors/selectors';
+import {selectors} from '../../../src/selectors/selectors';
 
 test.describe('CI Smoke tests for Search Bar Visibility @ci-smoke', () => {
 

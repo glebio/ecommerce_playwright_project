@@ -1,6 +1,6 @@
 import {test, expect} from '@playwright/test';
 import config from '../../../playwright.config';
-import {selectors} from '../../../selectors/selectors';
+import {selectors} from '../../../src/selectors/selectors';
 
 test.describe('Out-of-Stock Notifications @regression', () => {
     const BASE_URL = config.use?.baseURL || 'https://shop.qaresults.com';
