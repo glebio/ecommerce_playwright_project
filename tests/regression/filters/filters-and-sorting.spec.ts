@@ -1,6 +1,6 @@
 import {test} from '@playwright/test';
-import {HomePage} from '../../../pageObjects/HomePage';
-import {FiltersPage} from '../../../pageObjects/FiltersPage';
+import {HomePage} from '../../../src/pages/HomePage';
+import {FiltersPage} from '../../../src/pages/FiltersPage';
 
 test.describe('Filtering and Sorting Functionality @regression', () => {
 

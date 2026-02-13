@@ -13,8 +13,8 @@
   },
   "include": [
     "tests/**/*.ts",
-    "pageObjects/**/*.ts",
-    "utils/**/*.ts"
+    "src/pages/**/*.ts",
+    "src/utils/**/*.ts"
   ],
   "exclude": [
     "node_modules"

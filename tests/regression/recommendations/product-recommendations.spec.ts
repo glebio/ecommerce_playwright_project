@@ -1,6 +1,6 @@
 import {test, expect} from '@playwright/test';
 import config from '../../../playwright.config';
-import {selectors} from '../../../selectors/selectors';
+import {selectors} from '../../../src/selectors/selectors';
 
 // Feature: Product Recommendations Verification
 // Verify that the "Related Products" or "You May Also Like" sections display appropriate items.

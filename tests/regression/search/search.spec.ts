@@ -1,5 +1,5 @@
 import {expect, test} from '@playwright/test';
-import {HomePage} from '../../../pageObjects/HomePage';
+import {HomePage} from '../../../src/pages/HomePage';
 
 test.describe('Product Search Functionality', () => {
 

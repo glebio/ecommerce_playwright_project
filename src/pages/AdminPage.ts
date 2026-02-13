@@ -1,6 +1,6 @@
 import {Page} from '@playwright/test';
 import {selectors} from '../selectors/selectors';
-import config from '../config.json';
+import config from '../../config.json';
 
 export class AdminPage {
     constructor(private page: Page) {

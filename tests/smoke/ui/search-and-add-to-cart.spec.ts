@@ -1,11 +1,11 @@
 import {test, expect} from '@playwright/test';
-import {HomePage} from '../../../pageObjects/HomePage';
-import {ProductPage} from '../../../pageObjects/ProductPage';
-import {CheckoutPage} from '../../../pageObjects/CheckoutPage';
-import {OrderSuccessPage} from '../../../pageObjects/OrderSuccessPage';
-import {searchAndAddProductToCart} from '../../../utils/cartActions';
-import {generateAddressData} from '../../../utils/addressUtils';
-import {selectors} from '../../../selectors/selectors';
+import {HomePage} from '../../../src/pages/HomePage';
+import {ProductPage} from '../../../src/pages/ProductPage';
+import {CheckoutPage} from '../../../src/pages/CheckoutPage';
+import {OrderSuccessPage} from '../../../src/pages/OrderSuccessPage';
+import {searchAndAddProductToCart} from '../../../src/utils/cartActions';
+import {generateAddressData} from '../../../src/utils/addressUtils';
+import {selectors} from '../../../src/selectors/selectors';
 
 test('Smoke: Add product to the cart and proceed to checkout @smoke', async ({page}) => {
     const homePage = new HomePage(page);
