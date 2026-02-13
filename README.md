@@ -85,6 +85,11 @@ interactions** (like reviews and ratings) ond others.
   ```
   Use tags or separate configurations for targeted test execution.
 
+- **Clean generated artifacts (reports, traces)**
+  ```bash
+  npm run clean:reports
+  ```
+
 - **Headed vs. Headless**
   - Toggle `headless: false` or `headless: true` in your configuration for debugging (headed) or performance (headless).
 

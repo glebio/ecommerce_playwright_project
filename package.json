@@ -6,7 +6,8 @@
     "test": "playwright test",
     "test:ci-smoke": "playwright test tests/smoke --grep @ci-smoke",
     "typecheck": "tsc --noEmit",
-    "report": "playwright show-report"
+    "report": "playwright show-report",
+    "clean:reports": "rimraf test-results playwright-report allure-results allure-report"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +18,7 @@
     "@types/axios": "^0.9.36",
     "@types/node": "^22.7.4",
     "allure-playwright": "^3.2.0",
+    "rimraf": "^6.1.2",
     "typescript": "^5.9.3"
   },
   "dependencies": {
