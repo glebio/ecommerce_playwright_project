@@ -1,4 +1,3 @@
-// playwright.config.ts
 import {defineConfig} from '@playwright/test';
 
 const isCI = !!process.env.CI;
@@ -11,6 +10,9 @@ export default defineConfig({
     testDir: './tests',
     fullyParallel: false,
 
+    retries: isCI ? 1 : 0,
+    workers: isCI ? 1 : undefined,
+
     use: {
         headless: isCI,
         launchOptions: {
@@ -18,6 +20,8 @@ export default defineConfig({
         },
         baseURL: process.env.BASE_URL ?? 'https://shop.qaresults.com',
         trace: 'on-first-retry',
+        screenshot: 'only-on-failure',
+        video: 'retain-on-failure',
         navigationTimeout: 30_000,
     },
 
@@ -38,7 +42,8 @@ export default defineConfig({
     reporter: isIdea
         ? 'null'
         : [
+            ['list'],
             ['allure-playwright'],
-            ...(isCI ? [['html', {open: 'never'}] as const] : []),
+            ...(isCI ? ([['html', {open: 'never'}]] as const) : []),
         ],
 });
