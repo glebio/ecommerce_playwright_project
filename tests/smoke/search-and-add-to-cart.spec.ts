@@ -14,10 +14,9 @@ test('@ci-smoke search product, add to cart, verify cart item', async ({page}) =
     await home.header.search('iphone');
 
     await plp.selectFirstProduct();
-
     await pdp.waitLoaded();
+
     await pdp.addToCart();
     await pdp.header.goToCart();
-
     await cart.waitLoaded();
 });
