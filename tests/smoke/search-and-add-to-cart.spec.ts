@@ -1,4 +1,4 @@
-import {test} from '@playwright/test';
+import {test, expect} from '@playwright/test';
 import {HomePage} from '../../src/pages/home.page';
 import {PlpPage} from '../../src/pages/plp.page';
 import {PdpPage} from '../../src/pages/pdp.page';
@@ -10,13 +10,27 @@ test('@ci-smoke search product, add to cart, verify cart item', async ({page}) =
     const pdp = new PdpPage(page);
     const cart = new CartPage(page);
 
-    await home.open();
-    await home.header.search('iphone');
+    await test.step('Search for product', async () => {
+        await home.open();
+        await home.header.search('iphone');
+    });
 
-    await plp.selectFirstProduct();
-    await pdp.waitLoaded();
+    await test.step('Select first product from results', async () => {
+        await plp.selectFirstProduct();
+        await pdp.waitLoaded();
+    });
 
-    await pdp.addToCart();
-    await pdp.header.goToCart();
-    await cart.waitLoaded();
+    const productTitle = (await pdp.productTitle.textContent())?.trim() ?? '';
+    expect(productTitle).not.toBe('');
+
+    await test.step('Add to cart and navigate to cart', async () => {
+        await pdp.addToCart();
+        await pdp.header.goToCart();
+        await cart.waitLoaded();
+    });
+
+    await test.step('Verify cart has correct item', async () => {
+        await expect(cart.cartItems).toHaveCount(1);
+        await expect(cart.itemNames.first()).toContainText(productTitle);
+    });
 });

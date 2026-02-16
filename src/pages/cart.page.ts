@@ -9,12 +9,23 @@ export class CartPage {
         this.header = new HeaderComponent(page);
     }
 
+    get root(): Locator {
+        return this.page.locator(selectors.cartPage.root);
+    }
+
     get cartItems(): Locator {
-        return this.page.locator(selectors.cartPage.cartItem);
+        return this.root.locator('div.table-responsive tbody tr');
     }
 
-    async waitLoaded() {
-        await this.cartItems.first().waitFor({state: 'visible'});
+    get itemNames(): Locator {
+        return this.root.locator('div.table-responsive tbody td.text-left a');
     }
 
+    getItemByName(name: string): Locator {
+        return this.cartItems.filter({hasText: name});
+    }
+
+    async waitLoaded(): Promise<void> {
+        await this.root.waitFor({state: 'visible'});
+    }
 }
