@@ -48,7 +48,10 @@ export const selectors = {
     },
 
     cartPage: {
+        root: '#checkout-cart',
         cartItem: 'div[class="table-responsive"] tbody tr',
+        cartItemName: 'div[class="table-responsive"] tbody td.text-left a',
+
         checkoutButton: 'a[class="btn btn-primary"]',
         couponCodeInput: '#input-coupon',
         applyCouponButton: 'input[value="Apply Coupon"]',
