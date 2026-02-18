@@ -14,11 +14,11 @@ export class CartPage {
     }
 
     get cartItems(): Locator {
-        return this.root.locator('div.table-responsive tbody tr');
+        return this.root.locator(selectors.cartPage.cartItem);
     }
 
     get itemNames(): Locator {
-        return this.root.locator('div.table-responsive tbody td.text-left a');
+        return this.root.locator(selectors.cartPage.cartItemName);
     }
 
     getItemByName(name: string): Locator {
