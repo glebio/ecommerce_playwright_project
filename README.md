@@ -81,7 +81,7 @@ interactions** (like reviews and ratings) ond others.
 
 - **Run Specific Tests**
   ```bash
-  npx playwright test --grep @smoke
+  npm run test:ci-smoke
   ```
   Use tags or separate configurations for targeted test execution.
 
