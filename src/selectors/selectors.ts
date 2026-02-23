@@ -78,6 +78,17 @@ export const selectors = {
         confirmOrderButton: '#button-confirm',
     },
 
+    categoryMenu: {
+        openButton: 'div[class="oc-menu-bar"]',
+        container: 'div.vertical-menu .ul-top-items',
+        itemLink: 'div.vertical-menu .ul-top-items li.li-top-item a',
+    },
+
+    categoryPage: {
+        root: '#content',
+        productCard: '.product-layout',
+    },
+
     orderSuccessPage: {
         successMessage: '//div[@id="content"]/p[1]',
     },
