@@ -30,4 +30,20 @@ export class HeaderComponent {
         await this.cartButton.click();
         await this.viewCartButton.click();
     }
+
+    get accountButton(): Locator {
+        return this.page.locator(selectors.homePage.accountButton);
+    }
+
+    get loginLink(): Locator {
+        return this.page.locator(selectors.homePage.loginButton);
+    }
+
+    get registerLink(): Locator {
+        return this.page.locator(selectors.homePage.registerButton);
+    }
+
+    async openAccountDropdown(): Promise<void> {
+        await this.accountButton.click();
+    }
 }
