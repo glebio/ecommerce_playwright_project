@@ -46,4 +46,12 @@ export class HeaderComponent {
     async openAccountDropdown(): Promise<void> {
         await this.accountButton.click();
     }
+
+    get logo(): Locator {
+        return this.page.locator(selectors.homePage.logo);
+    }
+
+    get logoImage(): Locator {
+        return this.page.locator(selectors.homePage.logoImage);
+    }
 }

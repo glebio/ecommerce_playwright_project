@@ -1,5 +1,7 @@
 export const selectors = {
     homePage: {
+        logo: '#logo a',
+        logoImage: '#logo img',
         searchBox: '#text-search',
         searchButton: '#sp-btn-search',
         accountButton: 'a.dropdown-toggle[title="My Account"]',
