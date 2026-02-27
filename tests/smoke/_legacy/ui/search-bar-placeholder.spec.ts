@@ -1,5 +1,5 @@
 import {test, expect} from '@playwright/test';
-import config from '../../../playwright.config';
+import config from '../../../../playwright.config';
 
 test.describe('Search Bar Placeholder Verification @smoke', () => {
     const baseURL = config.use?.baseURL || '';

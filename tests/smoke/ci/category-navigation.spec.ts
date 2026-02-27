@@ -1,6 +1,6 @@
 import {test, expect} from '@playwright/test';
-import {HomePage} from '../../src/pages/home.page';
-import {CategoryPage} from '../../src/pages/category.page';
+import {HomePage} from '../../../src/pages/home.page';
+import {CategoryPage} from '../../../src/pages/category.page';
 
 const categories = [
     {name: 'Best Offers', urlPart: '/best-offers'},

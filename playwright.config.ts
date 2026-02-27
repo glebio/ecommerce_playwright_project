@@ -41,9 +41,7 @@ export default defineConfig({
 
     reporter: isIdea
         ? 'null'
-        : [
-            ['list'],
-            ['allure-playwright'],
-            ...(isCI ? ([['html', {open: 'never'}]] as const) : []),
-        ],
+        : isCI
+            ? [['list'], ['allure-playwright'], ['html', {open: 'never'}]]
+            : [['list']],
 });

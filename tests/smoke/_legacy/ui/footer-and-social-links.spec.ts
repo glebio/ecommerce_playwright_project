@@ -1,6 +1,6 @@
 import {test, expect} from '@playwright/test';
-import config from '../../../playwright.config';
-import {selectors} from '../../../src/selectors/selectors';
+import config from '../../../../playwright.config';
+import {selectors} from '../../../../src/selectors/selectors';
 
 // Feature: Footer and Social Links Verification
 // This test suite ensures that all footer links and social media icons are present, visible, and clickable.

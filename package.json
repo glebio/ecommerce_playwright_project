@@ -4,7 +4,10 @@
   "main": "index.js",
   "scripts": {
     "test": "playwright test",
-    "test:ci-smoke": "playwright test tests/smoke --grep @ci-smoke",
+    "test:list": "playwright test --list",
+    "test:ci-smoke": "playwright test tests/smoke/ci",
+    "test:smoke": "playwright test tests/smoke",
+    "test:regression": "playwright test tests/regression",
     "typecheck": "tsc --noEmit",
     "report": "playwright show-report",
     "clean:reports": "rimraf test-results playwright-report allure-results allure-report"

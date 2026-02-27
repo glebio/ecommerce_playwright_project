@@ -1,6 +1,6 @@
 import {test, expect} from '@playwright/test';
-import config from '../../../playwright.config';
-import {selectors} from '../../../src/selectors/selectors';
+import config from '../../../../playwright.config';
+import {selectors} from '../../../../src/selectors/selectors';
 
 // Feature: Breadcrumbs Verification
 // Ensures breadcrumbs are visible, reflect correct navigation paths, and are clickable.

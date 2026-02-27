@@ -1,5 +1,5 @@
 import {test, expect} from '@playwright/test';
-import {HomePage} from '../../src/pages/home.page';
+import {HomePage} from '../../../src/pages/home.page';
 
 test.describe('@ci-smoke Logo', () => {
     test('logo is visible and navigates to home page', async ({page}) => {

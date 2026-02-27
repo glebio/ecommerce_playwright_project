@@ -1,6 +1,6 @@
 import {test, expect} from '@playwright/test';
-import {HomePage} from '../../src/pages/home.page';
-import {PlpPage} from '../../src/pages/plp.page';
+import {HomePage} from '../../../src/pages/home.page';
+import {PlpPage} from '../../../src/pages/plp.page';
 
 test.describe('CI Smoke: Search Bar Visibility @ci-smoke', () => {
     test('search box visible on Home Page', async ({page}) => {

@@ -1,7 +1,7 @@
 import {test, expect} from '@playwright/test';
-import {HomePage} from '../../../src/pages/HomePage';
-import config from '../../../playwright.config';
-import {selectors} from '../../../src/selectors/selectors';
+import {HomePage} from '../../../../src/pages/HomePage';
+import config from '../../../../playwright.config';
+import {selectors} from '../../../../src/selectors/selectors';
 
 // Feature: Sign In/Sign Up Verification
 // This test suite ensures that both Sign In and Sign Up functionalities are visible and functioning properly on the home page.

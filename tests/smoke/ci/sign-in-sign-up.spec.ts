@@ -1,5 +1,5 @@
 import {test, expect} from '@playwright/test';
-import {HomePage} from '../../src/pages/home.page';
+import {HomePage} from '../../../src/pages/home.page';
 
 test.describe('@ci-smoke Sign In / Sign Up', () => {
     test('account dropdown shows login and register links', async ({page}) => {

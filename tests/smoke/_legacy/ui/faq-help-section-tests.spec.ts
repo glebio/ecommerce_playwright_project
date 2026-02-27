@@ -1,5 +1,5 @@
 import {test, expect} from '@playwright/test';
-import config from '../../../playwright.config';
+import config from '../../../../playwright.config';
 
 // Feature: FAQ and Help Section Verification
 // Ensures the FAQ and Help pages load correctly and display relevant information.
