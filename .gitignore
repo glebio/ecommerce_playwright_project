@@ -18,3 +18,5 @@ coverage/
 notes.md
 config.json
 test-results.json
+allure-results/
+allure-report/
